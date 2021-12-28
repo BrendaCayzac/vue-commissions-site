@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "npm run lint --fix && vue-cli-service build",
+    "lint": "npx vue-cli-service lint --fix"
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -23,7 +23,7 @@
     "@vue/cli-plugin-vuex": "~5.0.0-rc.1",
     "@vue/cli-service": "~5.0.0-rc.1",
     "@vue/eslint-config-typescript": "^9.1.0",
-    "eslint": "^7.32.0",
+    "eslint": "^8.5.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.0.3",
