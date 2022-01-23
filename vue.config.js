@@ -1,11 +1,13 @@
-const { defineConfig } = require("@vue/cli-service");
-module.exports = defineConfig({
-  transpileDependencies: true,
-  lintOnSave: true,
+module.exports = {
   pages: {
     index: {
       entry: "src/main.ts",
       title: "Brenda Cayzac",
     },
   },
-});
+  pwa: {
+    name: "BC Commissions",
+    themeColor: "#00aeef",
+    appleMobileWebAppStatusBarStyle: "black-translucent",
+  },
+};
