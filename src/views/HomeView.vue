@@ -6,7 +6,6 @@
       <p>Design</p>
       <div class="shape"></div>
     </section>
-    sup4gi
   </div>
 </template>
 
@@ -25,5 +24,12 @@ export default defineComponent({
   .shape {
     background-color: $bc-cyan;
   }
+}
+
+/* 48em = 768px*/
+@media (max-width: 48em) {
+	.home {
+		padding-top: 3.75rem;
+	}
 }
 </style>

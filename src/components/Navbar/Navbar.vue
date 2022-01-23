@@ -7,6 +7,7 @@
     <!--Menu Button-->
     <input
       v-if="windowWidth < 768"
+      v-model="showMenu"
       class="menu-button"
       type="checkbox"
       id="menu-button"
@@ -16,7 +17,7 @@
     </label>
 
     <!--Links-->
-    <ul class="menu">
+    <ul v-if="showMenu || windowWidth > 768" class="menu">
       <li v-for="(page, index) in pages" :key="index">
         <router-link :to="page.link">{{ page.name }}</router-link>
       </li>
@@ -38,13 +39,17 @@ export default defineComponent({
       { link: "/contact", name: "Contact" },
     ];
 
+    const showMenu = ref(false);
+
     const windowWidth = ref(window.innerWidth);
     window.onresize = () => {
       windowWidth.value = window.innerWidth;
+      if (windowWidth.value < 768) showMenu.value = false;
     };
 
     return {
       pages,
+      showMenu,
       windowWidth,
     };
   },
