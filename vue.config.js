@@ -9,5 +9,9 @@ module.exports = {
     name: "BC Commissions",
     themeColor: "#00aeef",
     appleMobileWebAppStatusBarStyle: "black-translucent",
+    workboxPluginMode: "GenerateSW",
+    workboxOptions: {
+      skipWaiting: true,
+    },
   },
 };
