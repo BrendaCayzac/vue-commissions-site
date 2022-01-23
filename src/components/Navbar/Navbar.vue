@@ -176,8 +176,7 @@ nav {
   }
 }
 
-/* 48em = 768px*/
-@media (min-width: 48em) {
+@media (min-width: $mobile) {
   nav {
     position: static;
     .menu {

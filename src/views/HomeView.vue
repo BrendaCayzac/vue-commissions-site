@@ -6,14 +6,18 @@
       <p>Design</p>
       <div class="shape"></div>
     </section>
+    <reload-window />
+    Bitch
   </div>
 </template>
 
 <script lang="ts">
+import ReloadWindow from "@/components/ReloadWindow.vue";
 import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "HomeView",
+  components: { ReloadWindow },
 });
 </script>
 
@@ -28,8 +32,8 @@ export default defineComponent({
 
 /* 48em = 768px*/
 @media (max-width: 48em) {
-	.home {
-		padding-top: 3.75rem;
-	}
+  .home {
+    padding-top: 3.75rem;
+  }
 }
 </style>
