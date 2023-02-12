@@ -9,6 +9,39 @@
       </div>
     </header>
 
+    <section class="about-me">
+      <!--Picture-->
+      <figure id="image-of-me">
+        <img src="../assets/photo.jpg" alt="Photo of Brenda Cayzac" />
+        <figcaption>That's me!</figcaption>
+      </figure>
+      <article>
+        <p>
+          I'm a curious person seeking to integrate a wide variety of techniques
+          and knowledge to offer
+          <strong
+            >high-quality solutions for communication strategies and projects </strong
+          >. My skills include graphic design, brand identity, advertising,
+          motion graphics, and web development (front-end, back-end, UX/UI
+          design). I'm always excited to learn new skills and refine existing
+          ones while working on my own or in a team.
+        </p>
+        <br />
+        <p>
+          On this website, you will be able to find my previous works as well as
+          get in contact with me. This website serves as a showcase for my
+          front-end skills by using Vue.js 3 to build it. I've also incorporated
+          the use of a basic service worker.
+        </p>
+        <br />
+        <p>
+          You can find the relevant code on my GitHub account as well as the
+          previous version of this site, which was created by using vanilla
+          HTML, SASS, and JavaScript.
+        </p>
+      </article>
+    </section>
+
     <section class="social-media-section">
       <div v-for="socialMedia in socialMedias" :key="socialMedia.id">
         <SocialMedia
@@ -139,6 +172,66 @@ export default defineComponent({
     }
   }
 
+  .about-me {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    font-size: 1rem;
+    margin: 2rem 1.5rem 4rem;
+    gap: 2rem;
+
+    //Image
+    #image-of-me {
+      position: relative;
+      width: 15rem;
+      height: 15rem;
+      border-radius: 50%;
+      background-color: $bc-magenta;
+      figcaption {
+        z-index: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      img {
+        border-radius: 50%;
+        width: 100%;
+        z-index: 2;
+
+        &:hover {
+          opacity: 30%;
+        }
+      }
+
+	    /* Hover */
+	    &:hover {
+		    figcaption {
+			    opacity: 100;
+			    font-weight: 600;
+			    color: #ffffff;
+		    }
+	    }
+    }
+
+    //introduction
+    article {
+      p {
+        text-align: justify;
+        font-weight: 400;
+        color: $bc-gray strong;
+        strong {
+          color: $bc-magenta;
+        }
+      }
+    }
+
+  }
+
   .social-media-section {
     background-color: $bc-cyan;
     width: 100%;
@@ -155,9 +248,47 @@ export default defineComponent({
   }
 }
 
+/* Tablet*/
+@media (min-width: $tablet) {
+  .home {
+    .about-me {
+      flex-direction: row;
+	    justify-content: center;
+
+      #image-of-me {
+        position: relative;
+        width: 15rem;
+        height: 15rem;
+        border-radius: 0;
+
+        img {
+          border-radius: 0;
+	        width: 15rem;
+        }
+      }
+
+	    article{
+		    width: 60%;
+	    }
+    }
+  }
+}
+
 /* Desktop */
 @media (min-width: $desktop) {
   .home {
+	  .about-me {
+
+		  #image-of-me {
+			  width: 20rem;
+			  height: 20rem;
+			  img {
+				  width: 20rem;
+			  }
+		  }
+
+	  }
+
     .social-media-section {
       justify-content: space-around;
     }
