@@ -30,6 +30,14 @@ export default defineComponent({
 
 		const handleScroll = ()=>{
 			headerRotation.value = window.scrollY > 30;
+			const categories = document.querySelector(".categories");
+
+			if (categories && window.scrollY > 30) {
+				categories.classList.add("align-right");
+			}else if(categories && window.scrollY < 30){
+				categories.classList.remove("align-right");
+			}
+
 		}
 
 		onMounted( ()=>{
@@ -69,21 +77,30 @@ export default defineComponent({
 			z-index: -1;
 			transition: all 0.2s ease;
 		}
-
-		.header-bg.rotated{
-			background-color: $bc-cyan;
-			transform: skewY(15deg);
-		}
 		.categories{
-			padding-top: 2rem;
-				position: relative;
+			padding-top: 3rem;
 			p {
 				margin: 0 1.5rem 0 0;
 				line-height: 3rem;
 				font-size: 3rem;
-				font-weight: 700;
-				text-align: right;
+				font-weight: 200;
 				color: white;
+				width: 100%;
+				text-align: center;
+				transition: 1s transform;
+			}
+		}
+
+		// Transition
+		.header-bg.rotated{
+			transform: skewY(15deg);
+		}
+
+		.categories.align-right {
+			p{
+			text-align: right;
+				padding-right:3rem;
+				transform: translateX(1%);
 			}
 		}
 
