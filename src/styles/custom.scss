@@ -4,7 +4,12 @@ $bc-magenta: #ec008c;
 
 $font: "Roboto", sans-serif;
 
-$mobile: 37.5rem;
-$tablet: 48rem;
-$desktop: 112.5rem;
+/* MEDIA BREAKPOINTS */
+
+$mobile: 37.5rem; /* 600px */
+$tablet: 48rem; /* 768px */
+$desktop-small: 60rem; /* 960px; */
+$desktop: 80rem; /* 1280px; */
+$desktop-standard: 112.5rem /* 1800px */
+
 
