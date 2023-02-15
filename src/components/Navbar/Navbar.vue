@@ -21,6 +21,22 @@
       <li v-for="(page, index) in pages" :key="index">
         <router-link :to="page.link">{{ page.name }}</router-link>
       </li>
+      <li class="language-selection">
+        <font-awesome-icon
+          icon="fa-solid fa-globe"
+          :transform="fontAwesomeStyling"
+        />
+        <span
+          v-for="(language, i) in languages"
+          :key="i"
+          @click="changeSelectedLanguage(language.language)"
+          :class="{
+            'selected-language': language.language === selectedLanguage,
+          }"
+        >
+          {{ windowWidth > 1000 ? language.language : language.shortLang }}
+        </span>
+      </li>
     </ul>
   </nav>
 </template>
@@ -39,16 +55,37 @@ export default defineComponent({
       { link: "/contact", name: "Contact" },
     ];
 
-    const showMenu = ref(false);
+    const languages = [
+      { language: "English", shortLang: "En" },
+      { language: "Español", shortLang: "Es" },
+      { language: "Français", shortLang: "Fr" },
+    ];
 
-    const windowWidth = ref(window.innerWidth);
+	  const fontAwesomeStyling = ref(window.innerWidth<768?"down-4":"down-14");
+    const selectedLanguage = ref("English");
+	  const changeSelectedLanguage = (language: string) => {
+		  selectedLanguage.value = language;
+    };
+
+    const showMenu = ref(false);
+	  const windowWidth = ref(window.innerWidth);
+
     window.onresize = () => {
-      windowWidth.value = window.innerWidth;
-      if (windowWidth.value < 768) showMenu.value = false;
+	    windowWidth.value = window.innerWidth;
+      if (windowWidth.value < 768) {
+	      showMenu.value = false;
+	      fontAwesomeStyling.value="down-4";
+      }else{
+	      fontAwesomeStyling.value="down-14";
+      }
     };
 
     return {
+      changeSelectedLanguage,
+      fontAwesomeStyling,
+      languages,
       pages,
+      selectedLanguage,
       showMenu,
       windowWidth,
     };
@@ -147,6 +184,7 @@ nav {
     clear: both;
     max-height: 0;
     transition: max-height 0.2s ease-out;
+    padding-bottom: 2rem;
 
     a {
       display: block;
@@ -170,13 +208,55 @@ nav {
       &:hover {
         background-color: #ffffff;
         font-weight: 700;
-        color: #ec008c;
+        color: $bc-magenta;
+      }
+    }
+
+    .language-selection {
+      display: flex;
+      align-content: center;
+      color: #ffffff;
+      padding: 0 1.5625rem;
+
+      span {
+        cursor: pointer;
+        padding: 0 0.621rem;
+	      position: relative;
+
+        &:hover {
+          font-weight: bold;
+        }
+
+	      &::after{
+		      content: "";
+		      position: absolute;
+		      background: #ffffff;
+		      top: 50%;
+		      right: 0%;
+		      height: 50%;
+		      width: 1px;
+		      transform: translateY(-50%);
+	      }
+
+	      &:last-child::after{
+		      width: 0;
+	      }
+      }
+
+      .selected-language {
+        font-weight: bold;
+        color: $bc-yellow;
+
+        &:hover {
+          cursor: default;
+          pointer-events: none;
+        }
       }
     }
   }
 }
 
-@media (min-width: $mobile) {
+@media (min-width: $tablet) {
   nav {
     position: static;
     .menu {
@@ -194,7 +274,13 @@ nav {
       li {
         float: left;
         a {
-          padding: 0.625rem 1.875rem;
+          padding: 0.625rem 1rem;
+        }
+      }
+
+      .language-selection {
+        span {
+          padding: 0.625rem;
         }
       }
     }

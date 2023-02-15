@@ -18,8 +18,10 @@ import {
   faBehance,
 } from "@fortawesome/free-brands-svg-icons";
 
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+
 /* add icons to the library */
-library.add(faBehance, faGithub, faLinkedinIn, faTwitter);
+library.add(faBehance, faGithub, faGlobe, faLinkedinIn, faTwitter);
 
 createApp(App)
   .component("font-awesome-icon", FontAwesomeIcon)
