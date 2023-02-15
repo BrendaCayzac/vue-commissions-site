@@ -139,7 +139,7 @@ export default defineComponent({
       padding-top: 3rem;
       p {
         margin: 0 1.5rem 0 0;
-        line-height: 3rem;
+        line-height: 3.5rem;
         font-size: 3rem;
         font-weight: 200;
         color: white;
