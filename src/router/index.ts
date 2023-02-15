@@ -4,25 +4,25 @@ import HomeView from "../views/HomeView.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "Home",
+    name: "home",
     component: HomeView,
-    meta: { title: "Home" },
+    meta: { title: "home" },
   },
   {
     path: "/commissions",
-    name: "Commissions",
+    name: "commissions",
     component: () => import("../views/AboutView.vue"),
     meta: { title: "Commissions" },
   },
   {
     path: "/portfolio",
-    name: "Portfolio",
+    name: "portfolio",
     component: () => import("../views/AboutView.vue"),
     meta: { title: "Portfolio" },
   },
   {
     path: "/contact",
-    name: "Contact",
+    name: "contact",
     component: () => import("../views/AboutView.vue"),
     meta: { title: "Contact" },
   },

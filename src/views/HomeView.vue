@@ -3,41 +3,32 @@
     <header>
       <div class="header-bg" :class="{ rotated: headerRotation }"></div>
       <div class="categories">
-        <p>Development</p>
-        <p>Illustration</p>
-        <p>Design</p>
+        <p>{{$t("development")}}</p>
+        <p>{{$t("illustration")}}</p>
+        <p>{{$t("design")}}</p>
       </div>
     </header>
 
     <section class="about-me">
       <!--Picture-->
       <figure id="image-of-me">
-        <img src="../assets/photo.jpg" alt="Photo of Brenda Cayzac" />
-        <figcaption>That's me!</figcaption>
+        <img src="../assets/photo.jpg" :alt="$t('my-photo-alt')" />
+        <figcaption>{{ $t("my-photo") }}</figcaption>
       </figure>
       <article>
         <p>
-          I'm a curious person seeking to integrate a wide variety of techniques
-          and knowledge to offer
+	        {{ $t("intro1") }}
           <strong
-            >high-quality solutions for communication strategies and projects </strong
-          >. My skills include graphic design, brand identity, advertising,
-          motion graphics, and web development (front-end, back-end, UX/UI
-          design). I'm always excited to learn new skills and refine existing
-          ones while working on my own or in a team.
+            >  {{ $t("intro2") }}</strong
+          >{{ $t("intro3") }}
         </p>
         <br />
         <p>
-          On this website, you will be able to find my previous works as well as
-          get in contact with me. This website serves as a showcase for my
-          front-end skills by using Vue.js 3 to build it. I've also incorporated
-          the use of a basic service worker.
+	        {{ $t("intro4") }}
         </p>
         <br />
         <p>
-          You can find the relevant code on my GitHub account as well as the
-          previous version of this site, which was created by using vanilla
-          HTML, SASS, and JavaScript.
+	        {{ $t("intro5") }}
         </p>
       </article>
     </section>

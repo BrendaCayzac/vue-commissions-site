@@ -1,0 +1,13 @@
+{
+	"development": "Développement",
+	"illustration": "Illustration",
+	"design": "Dessin",
+	"intro1": "Je suis une personne curieuse cherchant à intégrer une grande variété de techniques et de connaissances pour",
+	"intro2": "offrir des solutions de haute qualité pour les stratégies et projets de communication",
+	"intro3": ".  Mes compétences incluent le design graphique, l'identité de marque, la publicité, l'animation graphique et le développement web (front-end, back-end, UX/UI design). Je suis toujours enthousiaste à l'idée d'acquérir de nouvelles compétences et d'affiner celles que j'ai déjà, tout en travaillant seul ou en équipe.",
+	"intro4": "Sur ce site, vous pourrez retrouver mes travaux antérieurs ainsi qu'entrer en contact avec moi. Ce site web sert de vitrine à mes compétences front-end en utilisant Vue.js 3 pour le construire. J'ai également incorporé une utilisation basique de \"service worker\".",
+	"intro5": "Vous pouvez retrouver le code sur mon compte GitHub ainsi qu'une version antérieure du site construite en vanilla HTML, SASS et Javascript.",
+	"social-media-aria": "lien ver",
+	"my-photo": "Ce moi!",
+	"my-photo-alt": "Photo de Brenda Cayzac"
+}

@@ -18,8 +18,10 @@
 
     <!--Links-->
     <ul v-if="showMenu || windowWidth > 768" class="menu">
-      <li v-for="(page, index) in pages" :key="index">
-        <router-link :to="page.link">{{ page.name }}</router-link>
+      <li v-for="(route, index) in routes" :key="index">
+        <router-link :to="route.path">{{
+          $t(route.name.toString())
+        }}</router-link>
       </li>
       <li class="language-selection">
         <font-awesome-icon
@@ -29,7 +31,7 @@
         <span
           v-for="(language, i) in languages"
           :key="i"
-          @click="changeSelectedLanguage(language.language)"
+          @click="changeSelectedLanguage(language.language, language.shortLang)"
           :class="{
             'selected-language': language.language === selectedLanguage,
           }"
@@ -42,49 +44,50 @@
 </template>
 
 <script lang="ts">
+import i18n from "@/locales";
 import { defineComponent, ref, watch } from "vue";
-
+import { useRouter } from "vue-router";
 export default defineComponent({
   name: "SiteNavbar",
 
   setup() {
-    const pages = [
-      { link: "/", name: "Home" },
-      { link: "/commissions", name: "Commissions" },
-      { link: "/portfolio", name: "Portfolio" },
-      { link: "/contact", name: "Contact" },
-    ];
+    const selectedLanguage = ref("English");
+
+    const routes = useRouter().getRoutes();
 
     const languages = [
-      { language: "English", shortLang: "En" },
-      { language: "Español", shortLang: "Es" },
-      { language: "Français", shortLang: "Fr" },
+      { language: "English", shortLang: "en" },
+      { language: "Español", shortLang: "es" },
+      { language: "Français", shortLang: "fr" },
     ];
 
-	  const fontAwesomeStyling = ref(window.innerWidth<768?"down-4":"down-14");
-    const selectedLanguage = ref("English");
-	  const changeSelectedLanguage = (language: string) => {
-		  selectedLanguage.value = language;
+    const fontAwesomeStyling = ref(
+      window.innerWidth < 600 ? "down-4" : "down-18"
+    );
+    const changeSelectedLanguage = (
+      language: string,
+      shorthand: "en" | "es" | "fr"
+    ) => {
+      selectedLanguage.value = language;
+      i18n.global.locale = shorthand;
     };
 
     const showMenu = ref(false);
-	  const windowWidth = ref(window.innerWidth);
+    const windowWidth = ref(window.innerWidth);
 
     window.onresize = () => {
-	    windowWidth.value = window.innerWidth;
-      if (windowWidth.value < 768) {
-	      showMenu.value = false;
-	      fontAwesomeStyling.value="down-4";
-      }else{
-	      fontAwesomeStyling.value="down-14";
-      }
+      windowWidth.value = window.innerWidth;
+      if (windowWidth.value < 768) showMenu.value = false;
+      windowWidth.value < 600
+        ? (fontAwesomeStyling.value = "down-4")
+        : (fontAwesomeStyling.value = "down-18");
     };
 
     return {
       changeSelectedLanguage,
       fontAwesomeStyling,
       languages,
-      pages,
+      routes,
       selectedLanguage,
       showMenu,
       windowWidth,
@@ -221,26 +224,27 @@ nav {
       span {
         cursor: pointer;
         padding: 0 0.621rem;
-	      position: relative;
+        position: relative;
+	      text-transform: capitalize;
 
         &:hover {
           font-weight: bold;
         }
 
-	      &::after{
-		      content: "";
-		      position: absolute;
-		      background: #ffffff;
-		      top: 50%;
-		      right: 0%;
-		      height: 50%;
-		      width: 1px;
-		      transform: translateY(-50%);
-	      }
+        &::after {
+          content: "";
+          position: absolute;
+          background: #ffffff;
+          top: 50%;
+          right: 0%;
+          height: 50%;
+          width: 1px;
+          transform: translateY(-50%);
+        }
 
-	      &:last-child::after{
-		      width: 0;
-	      }
+        &:last-child::after {
+          width: 0;
+        }
       }
 
       .selected-language {
@@ -280,7 +284,7 @@ nav {
 
       .language-selection {
         span {
-          padding: 0.625rem;
+          padding: 0.9rem 0.625rem 0.625rem;
         }
       }
     }

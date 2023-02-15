@@ -3,7 +3,7 @@
     <a
       class="button"
       role="button"
-      :aria-label="'link to Brenda Cayzac\'s ' + id"
+      :aria-label="$t('social-media-aria') + ' ' + id"
       :href="url"
     >
       <font-awesome-icon :icon="faIcon" />
@@ -68,7 +68,7 @@ export default defineComponent({
 // Screens > tablet
 @media (min-width: $tablet) {
   .social-media-button {
-	  transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 
     .button {
       width: 3rem;
@@ -92,35 +92,33 @@ export default defineComponent({
 
 /* Min Desktop */
 @media (min-width: $desktop-small) {
-	.social-media-button {
-
-		.button {
-			width: 4rem;
-			height: 4rem;
-			font-size: 2rem;
-			line-height: 4.1rem;
-		}
-		.text {
-			font-size:1.25rem;
-			padding-left: 0.625rem;
-		}
-	}
+  .social-media-button {
+    .button {
+      width: 4rem;
+      height: 4rem;
+      font-size: 2rem;
+      line-height: 4.1rem;
+    }
+    .text {
+      font-size: 1.25rem;
+      padding-left: 0.625rem;
+    }
+  }
 }
 
 /* Desktop */
 @media (min-width: $desktop) {
-	.social-media-button {
-
-		.button {
-			width: 5rem;
-			height: 5rem;
-			font-size: 3rem;
-			line-height: 5.1rem;
-		}
-		.text {
-			font-size:1.5rem;
-			padding-left: 0.625rem;
-		}
-	}
+  .social-media-button {
+    .button {
+      width: 5rem;
+      height: 5rem;
+      font-size: 3rem;
+      line-height: 5.1rem;
+    }
+    .text {
+      font-size: 1.5rem;
+      padding-left: 0.625rem;
+    }
+  }
 }
 </style>
