@@ -14,6 +14,7 @@ const i18n = createI18n({
   globalInjection: true,
   allowComposition: true,
   locale: "en",
+  fallbackLocale: "es",
   messages,
 });
 

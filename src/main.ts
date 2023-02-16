@@ -18,10 +18,22 @@ import {
   faBehance,
 } from "@fortawesome/free-brands-svg-icons";
 
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGlobe,
+  faQuoteRight,
+  faQuoteLeft,
+} from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
-library.add(faBehance, faGithub, faGlobe, faLinkedinIn, faTwitter);
+library.add(
+  faBehance,
+  faGithub,
+  faGlobe,
+  faLinkedinIn,
+  faQuoteRight,
+  faQuoteLeft,
+  faTwitter
+);
 
 createApp(App)
   .component("font-awesome-icon", FontAwesomeIcon)

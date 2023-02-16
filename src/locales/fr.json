@@ -13,5 +13,7 @@
   "intro5": "Vous pouvez retrouver le code sur mon compte GitHub ainsi qu'une version antérieure du site construite en vanilla HTML, SASS et Javascript.",
   "social-media-aria": "lien ver",
   "my-photo": "Ce moi!",
-  "my-photo-alt": "Photo de Brenda Cayzac"
+  "my-photo-alt": "Photo de Brenda Cayzac",
+	"quote-paul-rand": "“Le design est la méthode d'assemblage de la forme et du contenu. Le design, tout comme l'art, a de multiples définitions ; il n'y a pas de définition unique. Le design peut être de l'art. Le design peut être esthétique. Le design est si simple, c'est pourquoi il est si compliqué.” ",
+	"quote-emil-cioran": "“L'essentiel surgit souvent au bout d'une longue conversation. Les grandes vérités se disent sur le pas de la porte.” "
 }

@@ -3,9 +3,9 @@
     <header>
       <div class="header-bg" :class="{ rotated: headerRotation }"></div>
       <div class="categories">
-        <p>{{$t("development")}}</p>
-        <p>{{$t("illustration")}}</p>
-        <p>{{$t("design")}}</p>
+        <p>{{ $t("development") }}</p>
+        <p>{{ $t("illustration") }}</p>
+        <p>{{ $t("design") }}</p>
       </div>
     </header>
 
@@ -17,18 +17,17 @@
       </figure>
       <article>
         <p>
-	        {{ $t("intro1") }}
-          <strong
-            >  {{ $t("intro2") }}</strong
+          {{ $t("intro1") }}
+          <strong> {{ $t("intro2") }}</strong
           >{{ $t("intro3") }}
         </p>
         <br />
         <p>
-	        {{ $t("intro4") }}
+          {{ $t("intro4") }}
         </p>
         <br />
         <p>
-	        {{ $t("intro5") }}
+          {{ $t("intro5") }}
         </p>
       </article>
     </section>
@@ -44,11 +43,23 @@
       </div>
     </section>
 
+    <section class="quotes">
+      <div v-for="(quote, i) in quotes" :key="i">
+        <blockquote>
+          <font-awesome-icon icon="fas fa-quote-left" />
+          {{ $t(quote.quote) }} <br /><br />
+          <span>— {{ quote.author }}</span>
+        </blockquote>
+        <font-awesome-icon icon="fas fa-quote-right" />
+      </div>
+    </section>
+
     <reload-window />
   </div>
 </template>
 
 <script lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { defineComponent, ref, onBeforeUnmount, onMounted } from "vue";
 
 import SocialMedia from "@/components/SocialMedia/SocialMedia.vue";
@@ -56,7 +67,7 @@ import ReloadWindow from "@/components/ReloadWindow.vue";
 
 export default defineComponent({
   name: "HomeView",
-  components: { ReloadWindow, SocialMedia },
+  components: { FontAwesomeIcon, ReloadWindow, SocialMedia },
   setup() {
     const headerRotation = ref(false);
 
@@ -87,6 +98,14 @@ export default defineComponent({
       },
     ];
 
+    const quotes = [
+      { quote: "quote-paul-rand", author: "Paul Rand" },
+      {
+        quote: "quote-emil-cioran",
+        author: "Emile Cioran",
+      },
+    ];
+
     const handleScroll = () => {
       headerRotation.value = window.scrollY > 30;
       const categories = document.querySelector(".categories");
@@ -108,6 +127,7 @@ export default defineComponent({
 
     return {
       headerRotation,
+      quotes,
       socialMedias,
     };
   },
@@ -199,14 +219,14 @@ export default defineComponent({
         }
       }
 
-	    /* Hover */
-	    &:hover {
-		    figcaption {
-			    opacity: 100;
-			    font-weight: 600;
-			    color: #ffffff;
-		    }
-	    }
+      /* Hover */
+      &:hover {
+        figcaption {
+          opacity: 100;
+          font-weight: 600;
+          color: #ffffff;
+        }
+      }
     }
 
     //introduction
@@ -220,7 +240,6 @@ export default defineComponent({
         }
       }
     }
-
   }
 
   .social-media-section {
@@ -229,6 +248,111 @@ export default defineComponent({
     padding: 1.5rem 2rem;
     display: flex;
     justify-content: space-between;
+  }
+
+  // Quotes
+  .quotes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    margin: 4rem 1.5rem;
+
+    div {
+      background-color: transparent;
+      border-radius: 3px;
+      text-align: center;
+      transition: 0.4s;
+      position: relative;
+      font-style: italic;
+      width: 100%;
+      max-width: 45rem;
+
+      blockquote {
+        position: relative;
+        padding: 2rem 5rem 3rem;
+        margin: 3rem 0 3rem;
+        width: calc(100% - 1rem);
+        background-color: $bc-gray;
+        transition: 0.4s;
+        color: #ffffff;
+        font-size: 1.3rem;
+
+        span {
+          color: $bc-yellow;
+          font-style: normal;
+          font-size: 1rem;
+        }
+      }
+
+      svg {
+        font-size: 1.563rem;
+        height: 3.125rem;
+        width: 3.125rem;
+        line-height: 3.125rem;
+        background-color: $bc-magenta;
+        color: #ffffff;
+      }
+
+      .fa-quote-left {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .fa-quote-right {
+        position: absolute;
+        bottom: 0;
+        right: 2.65rem;
+        z-index: 1;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 1.9rem;
+        width: calc(100% - 4.5rem);
+        height: 100%;
+        background: transparent;
+        border-top: 20px solid $bc-magenta;
+        border-left: 20px solid $bc-magenta;
+        box-sizing: border-box;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 1.9rem;
+        width: calc(100% - 4.5rem);
+        height: 100%;
+        border-bottom: 20px solid $bc-magenta;
+        border-right: 20px solid $bc-magenta;
+      }
+
+      &:hover {
+        blockquote {
+          transform: rotateY(24deg) skewY(-3deg);
+        }
+
+        transform: skewY(3deg);
+
+        svg {
+          background-color: $bc-cyan;
+        }
+
+        &:before {
+          border-top: 20px solid $bc-cyan;
+          border-left: 20px solid $bc-cyan;
+        }
+
+        &:after {
+          border-bottom: 20px solid $bc-cyan;
+          border-right: 20px solid $bc-cyan;
+        }
+      }
+    }
   }
 }
 
@@ -244,7 +368,7 @@ export default defineComponent({
   .home {
     .about-me {
       flex-direction: row;
-	    justify-content: center;
+      justify-content: center;
 
       #image-of-me {
         position: relative;
@@ -254,13 +378,13 @@ export default defineComponent({
 
         img {
           border-radius: 0;
-	        width: 15rem;
+          width: 15rem;
         }
       }
 
-	    article{
-		    width: 60%;
-	    }
+      article {
+        width: 60%;
+      }
     }
   }
 }
@@ -268,20 +392,27 @@ export default defineComponent({
 /* Desktop */
 @media (min-width: $desktop) {
   .home {
-	  .about-me {
-
-		  #image-of-me {
-			  width: 20rem;
-			  height: 20rem;
-			  img {
-				  width: 20rem;
-			  }
-		  }
-
-	  }
+    .about-me {
+      #image-of-me {
+        width: 20rem;
+        height: 20rem;
+        img {
+          width: 20rem;
+        }
+      }
+    }
 
     .social-media-section {
       justify-content: space-around;
+    }
+
+    // Quotes
+    .quotes {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 4rem 1.5rem;
     }
   }
 }
