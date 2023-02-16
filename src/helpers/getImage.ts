@@ -3,13 +3,13 @@ export const getImgUrl = (name: string, fileType: string): string => {
 
   switch (fileType) {
     case "png":
-      image = require.context("../assets/", false, /\.png$/);
+      image = require.context("@/assets/", false, /\.png$/);
       break;
     case "jpg":
-      image = require.context("../assets/", false, /\.jpg$/);
+      image = require.context("@/assets/", false, /\.jpg$/);
       break;
     case "gif":
-      image = require.context("../assets/", false, /\.gif$/);
+      image = require.context("@/assets/", false, /\.gif$/);
       break;
   }
 

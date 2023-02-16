@@ -53,16 +53,13 @@
                 info.src === 'motion_graphics' ? 'gif' : 'jpg'
               )
             "
-            :alt="$t(info.srcAlt)"
+            :alt="$t(info.srcAlt) + ' ' + $t(info.title)"
           />
-          <figcaption>
-            {{ $t(info.figcaption) + " " + $t(info.title) }}
-          </figcaption>
         </figure>
         <article>
           <h1>{{ $t(info.title) }}</h1>
           <p>{{ $t(info.text) }}</p>
-          <button>{{ $t(info.buttonText) }}</button>
+          <a href="/portfolio" role="button">{{ $t(info.buttonText) }}</a>
         </article>
       </div>
     </section>
@@ -126,32 +123,28 @@ export default defineComponent({
     const information = [
       {
         src: "web_design",
-        srcAlt: "development",
-        figcaption: "example-of",
+        srcAlt: "example-of",
         title: "development",
         text: "development-information",
         buttonText: "view-my-portfolio",
       },
       {
         src: "Jacques_reveal",
-        srcAlt: "illustration",
-        figcaption: "example-of",
+        srcAlt: "example-of",
         title: "illustration",
         text: "illustration-information",
         buttonText: "view-my-portfolio",
       },
       {
         src: "graphic_design",
-        srcAlt: "graphic-design",
-        figcaption: "example-of",
+        srcAlt: "example-of",
         title: "graphic-design",
         text: "graphic-design-information",
         buttonText: "view-my-portfolio",
       },
       {
         src: "motion_graphics",
-        srcAlt: "motion-graphics",
-        figcaption: "example-of",
+        srcAlt: "example-of",
         title: "motion-graphics",
         text: "motion-graphics-information",
         buttonText: "view-my-portfolio",
@@ -310,6 +303,51 @@ export default defineComponent({
     padding: 1.5rem 2rem;
     display: flex;
     justify-content: space-between;
+  }
+
+  //Information
+  .information {
+    margin: 2rem 1.5rem;
+	  display: flex;
+	  flex-direction: column;
+	  gap: 3rem;
+
+    div {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.6125rem;
+      figure {
+        position: relative;
+        width: 20rem;
+        margin: auto;
+
+        img {
+          width: 100%;
+          z-index: 2;
+
+          &:hover {
+            filter: grayscale(1);
+          }
+        }
+      }
+
+      article {
+        h1 {
+	        font-family: 'Roboto Condensed', sans-serif;
+          font-weight: 300;
+          font-size: 1.8rem;
+	        color: $bc-cyan;
+        }
+
+	      p{
+		      text-align: justify;
+		      margin: 0.5rem 0 2rem;
+	      }
+      }
+    }
   }
 
   // Quotes
