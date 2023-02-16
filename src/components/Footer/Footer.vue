@@ -76,7 +76,7 @@ footer {
       justify-content: flex-start;
       align-self: center;
       gap: 2rem;
-	    margin: 0;
+      margin: 0;
 
       li {
         display: flex;
@@ -87,12 +87,16 @@ footer {
         a {
           color: #ffffff;
           text-decoration: none;
+          &:focus {
+            outline-color: $bc-yellow;
+          }
         }
         svg {
           font-size: 1.5rem;
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
           color: $bc-yellow;
           a {
             color: $bc-yellow;
@@ -107,7 +111,7 @@ footer {
     font-weight: 400;
     padding: 0;
     margin: 0;
-	  text-align: center;
+    text-align: center;
   }
 }
 </style>
