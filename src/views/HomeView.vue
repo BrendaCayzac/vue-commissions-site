@@ -46,7 +46,15 @@
     <section class="information">
       <div v-for="(info, i) in information" :key="i">
         <figure>
-          <img :src="getImgUrl(info.src,'jpg')" :alt="$t(info.srcAlt)" />
+          <img
+            :src="
+              getImgUrl(
+                info.src,
+                info.src === 'motion_graphics' ? 'gif' : 'jpg'
+              )
+            "
+            :alt="$t(info.srcAlt)"
+          />
           <figcaption>
             {{ $t(info.figcaption) + " " + $t(info.title) }}
           </figcaption>
@@ -54,7 +62,7 @@
         <article>
           <h1>{{ $t(info.title) }}</h1>
           <p>{{ $t(info.text) }}</p>
-          <button>{{$t(info.buttonText)}}</button>
+          <button>{{ $t(info.buttonText) }}</button>
         </article>
       </div>
     </section>
@@ -117,7 +125,7 @@ export default defineComponent({
 
     const information = [
       {
-        src: "photo",
+        src: "web_design",
         srcAlt: "development",
         figcaption: "example-of",
         title: "development",
@@ -125,7 +133,7 @@ export default defineComponent({
         buttonText: "view-my-portfolio",
       },
       {
-        src: "photo",
+        src: "Jacques_reveal",
         srcAlt: "illustration",
         figcaption: "example-of",
         title: "illustration",
@@ -133,15 +141,15 @@ export default defineComponent({
         buttonText: "view-my-portfolio",
       },
       {
-        src: "photo",
-        srcAlt: "illustration",
+        src: "graphic_design",
+        srcAlt: "graphic-design",
         figcaption: "example-of",
         title: "graphic-design",
         text: "graphic-design-information",
         buttonText: "view-my-portfolio",
       },
       {
-        src: "photo",
+        src: "motion_graphics",
         srcAlt: "motion-graphics",
         figcaption: "example-of",
         title: "motion-graphics",
@@ -178,7 +186,7 @@ export default defineComponent({
     });
 
     return {
-	    getImgUrl,
+      getImgUrl,
       headerRotation,
       information,
       quotes,
