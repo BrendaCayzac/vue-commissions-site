@@ -44,9 +44,11 @@
 </template>
 
 <script lang="ts">
-import i18n from "@/locales";
-import { defineComponent, ref, watch } from "vue";
+import { defineComponent, ref } from "vue";
 import { useRouter } from "vue-router";
+
+import i18n from "@/locales";
+
 export default defineComponent({
   name: "SiteNavbar",
 
@@ -225,7 +227,7 @@ nav {
         cursor: pointer;
         padding: 0 0.621rem;
         position: relative;
-	      text-transform: capitalize;
+        text-transform: capitalize;
 
         &:hover {
           font-weight: bold;

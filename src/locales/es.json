@@ -1,0 +1,17 @@
+{
+  "home": "Home",
+  "commissions": "Comisiones",
+  "portfolio": "Portfolio",
+  "contact": "Contacto",
+  "development": "Desarrollo",
+  "illustration": "Ilustración",
+  "design": "Diseño",
+  "intro1": "Soy una persona curios que busca integrar una gran variedad de técnicas y conocimientos para ofrecer",
+  "intro2": "una alta calidad de soluciones para estrategias de comunicación y proyectos",
+  "intro3": ".  Mis habilidades incluyen diseño gráfico, identidad de marca, publicidad, motion graphics, y desarrollo web (front-end, back-end, diseñoUX/UI). Siempre estoy interesada en aprender nuevas habilidades y refinar aquellas que ya tengo mientras trabajo sola o dentro de un equipo.",
+  "intro4": "En este sitio, vas a poder encontrar mis trabajos previos y te vas a poder poner en contacto conmigo. Este sitio sirve para demostrar mis habilidades front-end usando Bue.js 3 para construirlo. También he incorporado un uso básico de un service worker.",
+  "intro5": "También puedes encontrar el código relevante en mi cuenta de Github, así como la versión previa de este sitio que construí utilizando HTML, SASS, y JavaScript.",
+  "social-media-aria": "link to Brenda Cayzac's",
+  "my-photo": "Esta soy yo!",
+  "my-photo-alt": "Foto de Brenda Cayzac"
+}
