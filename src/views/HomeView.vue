@@ -43,6 +43,22 @@
       </div>
     </section>
 
+    <section class="information">
+      <div v-for="(info, i) in information" :key="i">
+        <figure>
+          <img :src="getImgUrl(info.src,'jpg')" :alt="$t(info.srcAlt)" />
+          <figcaption>
+            {{ $t(info.figcaption) + " " + $t(info.title) }}
+          </figcaption>
+        </figure>
+        <article>
+          <h1>{{ $t(info.title) }}</h1>
+          <p>{{ $t(info.text) }}</p>
+          <button>{{$t(info.buttonText)}}</button>
+        </article>
+      </div>
+    </section>
+
     <section class="quotes">
       <div v-for="(quote, i) in quotes" :key="i">
         <blockquote>
@@ -64,6 +80,7 @@ import { defineComponent, ref, onBeforeUnmount, onMounted } from "vue";
 
 import SocialMedia from "@/components/SocialMedia/SocialMedia.vue";
 import ReloadWindow from "@/components/ReloadWindow.vue";
+import { getImgUrl } from "@/helpers/getImage";
 
 export default defineComponent({
   name: "HomeView",
@@ -98,6 +115,41 @@ export default defineComponent({
       },
     ];
 
+    const information = [
+      {
+        src: "photo",
+        srcAlt: "development",
+        figcaption: "example-of",
+        title: "development",
+        text: "development-information",
+        buttonText: "view-my-portfolio",
+      },
+      {
+        src: "photo",
+        srcAlt: "illustration",
+        figcaption: "example-of",
+        title: "illustration",
+        text: "illustration-information",
+        buttonText: "view-my-portfolio",
+      },
+      {
+        src: "photo",
+        srcAlt: "illustration",
+        figcaption: "example-of",
+        title: "graphic-design",
+        text: "graphic-design-information",
+        buttonText: "view-my-portfolio",
+      },
+      {
+        src: "photo",
+        srcAlt: "motion-graphics",
+        figcaption: "example-of",
+        title: "motion-graphics",
+        text: "motion-graphics-information",
+        buttonText: "view-my-portfolio",
+      },
+    ];
+
     const quotes = [
       { quote: "quote-paul-rand", author: "Paul Rand" },
       {
@@ -126,7 +178,9 @@ export default defineComponent({
     });
 
     return {
+	    getImgUrl,
       headerRotation,
+      information,
       quotes,
       socialMedias,
     };
