@@ -56,24 +56,22 @@
             :alt="$t(info.srcAlt) + ' ' + $t(info.title)"
           />
         </figure>
+
         <article>
           <h1>{{ $t(info.title) }}</h1>
           <p>{{ $t(info.text) }}</p>
-          <a href="/portfolio" role="button">{{ $t(info.buttonText) }}</a>
+          <a :href="info.link" role="button">
+            <font-awesome-icon icon="fas fa-chevron-right" />
+            {{ $t("view-more") }}
+            <svg class="rectangle">
+              <rect x="0" y="0" fill="none" width="100%" height="100%" />
+            </svg>
+          </a>
         </article>
       </div>
     </section>
 
-    <section class="quotes">
-      <div v-for="(quote, i) in quotes" :key="i">
-        <blockquote>
-          <font-awesome-icon icon="fas fa-quote-left" />
-          {{ $t(quote.quote) }} <br /><br />
-          <span>— {{ quote.author }}</span>
-        </blockquote>
-        <font-awesome-icon icon="fas fa-quote-right" />
-      </div>
-    </section>
+	  <Quote quote="quote-paul-rand" author="Paul Rand"/>
 
     <reload-window />
   </div>
@@ -83,13 +81,14 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { defineComponent, ref, onBeforeUnmount, onMounted } from "vue";
 
+import Quote from "@/components/Quote/Quote.vue";
 import SocialMedia from "@/components/SocialMedia/SocialMedia.vue";
 import ReloadWindow from "@/components/ReloadWindow.vue";
 import { getImgUrl } from "@/helpers/getImage";
 
 export default defineComponent({
   name: "HomeView",
-  components: { FontAwesomeIcon, ReloadWindow, SocialMedia },
+  components: { FontAwesomeIcon, Quote, ReloadWindow, SocialMedia },
   setup() {
     const headerRotation = ref(false);
 
@@ -126,36 +125,28 @@ export default defineComponent({
         srcAlt: "example-of",
         title: "development",
         text: "development-information",
-        buttonText: "view-my-portfolio",
+        link: "https://github.com/BrendaCayzac?tab=repositories",
       },
       {
         src: "Jacques_reveal",
         srcAlt: "example-of",
         title: "illustration",
         text: "illustration-information",
-        buttonText: "view-my-portfolio",
+        link: "/commissions",
       },
       {
         src: "graphic_design",
         srcAlt: "example-of",
         title: "graphic-design",
         text: "graphic-design-information",
-        buttonText: "view-my-portfolio",
+        link: "https://www.behance.net/brendacayzeb7a",
       },
       {
         src: "motion_graphics",
         srcAlt: "example-of",
         title: "motion-graphics",
         text: "motion-graphics-information",
-        buttonText: "view-my-portfolio",
-      },
-    ];
-
-    const quotes = [
-      { quote: "quote-paul-rand", author: "Paul Rand" },
-      {
-        quote: "quote-emil-cioran",
-        author: "Emile Cioran",
+        link: "/portfolio",
       },
     ];
 
@@ -182,7 +173,6 @@ export default defineComponent({
       getImgUrl,
       headerRotation,
       information,
-      quotes,
       socialMedias,
     };
   },
@@ -193,6 +183,7 @@ export default defineComponent({
 @import "src/styles/custom";
 
 .home {
+  padding-top: 3.75rem;
   header {
     position: relative;
     height: 18rem;
@@ -308,9 +299,9 @@ export default defineComponent({
   //Information
   .information {
     margin: 2rem 1.5rem;
-	  display: flex;
-	  flex-direction: column;
-	  gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 
     div {
       width: 100%;
@@ -318,7 +309,7 @@ export default defineComponent({
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 0.6125rem;
+      gap: 0.625rem;
       figure {
         position: relative;
         width: 20rem;
@@ -336,136 +327,67 @@ export default defineComponent({
 
       article {
         h1 {
-	        font-family: 'Roboto Condensed', sans-serif;
+          font-family: "Roboto Condensed", sans-serif;
           font-weight: 300;
           font-size: 1.8rem;
-	        color: $bc-cyan;
+          color: $bc-cyan;
         }
 
-	      p{
-		      text-align: justify;
-		      margin: 0.5rem 0 2rem;
-	      }
-      }
-    }
-  }
-
-  // Quotes
-  .quotes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5rem;
-    margin: 4rem 1.5rem;
-
-    div {
-      background-color: transparent;
-      border-radius: 3px;
-      text-align: center;
-      transition: 0.4s;
-      position: relative;
-      font-style: italic;
-      width: 100%;
-      max-width: 45rem;
-
-      blockquote {
-        position: relative;
-        padding: 2rem 5rem 3rem;
-        margin: 3rem 0 3rem;
-        width: calc(100% - 1rem);
-        background-color: $bc-gray;
-        transition: 0.4s;
-        color: #ffffff;
-        font-size: 1.3rem;
-
-        span {
-          color: $bc-yellow;
-          font-style: normal;
-          font-size: 1rem;
-        }
-      }
-
-      svg {
-        font-size: 1.563rem;
-        height: 3.125rem;
-        width: 3.125rem;
-        line-height: 3.125rem;
-        background-color: $bc-magenta;
-        color: #ffffff;
-      }
-
-      .fa-quote-left {
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-
-      .fa-quote-right {
-        position: absolute;
-        bottom: 0;
-        right: 2.65rem;
-        z-index: 1;
-      }
-
-      &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 1.9rem;
-        width: calc(100% - 4.5rem);
-        height: 100%;
-        background: transparent;
-        border-top: 20px solid $bc-magenta;
-        border-left: 20px solid $bc-magenta;
-        box-sizing: border-box;
-      }
-
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 1.9rem;
-        width: calc(100% - 4.5rem);
-        height: 100%;
-        border-bottom: 20px solid $bc-magenta;
-        border-right: 20px solid $bc-magenta;
-      }
-
-      &:hover {
-        blockquote {
-          transform: rotateY(24deg) skewY(-3deg);
+        p {
+          text-align: justify;
+          margin: 0.5rem 0 2rem;
         }
 
-        transform: skewY(3deg);
+        a {
+          position: relative;
+          padding: 0.625rem 2rem;
+          max-width: 15rem;
+          width: 100%;
+          cursor: pointer;
+          background: transparent;
+          color: $bc-cyan;
+          text-decoration: none;
+          text-transform: uppercase;
 
-        svg {
-          background-color: $bc-cyan;
-        }
+          .rectangle {
+            width: 100%;
+            height: 2.813rem;
+            position: absolute;
+            left: 0;
+            top: 0;
 
-        &:before {
-          border-top: 20px solid $bc-cyan;
-          border-left: 20px solid $bc-cyan;
-        }
+            rect {
+              fill: none;
+              stroke: $bc-cyan;
+              stroke-width: 2;
+              stroke-dasharray: 422, 0;
+              transition: all 0.35s ease;
+            }
+          }
 
-        &:after {
-          border-bottom: 20px solid $bc-cyan;
-          border-right: 20px solid $bc-cyan;
+          &:hover {
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: $bc-magenta;
+
+            rect {
+              stroke: $bc-magenta;
+              stroke-width: 5;
+              stroke-dasharray: 0, 310;
+              stroke-dashoffset: 48;
+              transition: all 0.3s ease;
+            }
+          }
         }
       }
     }
-  }
-}
-
-/* 48em = 768px*/
-@media (max-width: $mobile) {
-  .home {
-    padding-top: 3.75rem;
   }
 }
 
 /* Tablet*/
 @media (min-width: $tablet) {
   .home {
+    padding-top: 0;
     .about-me {
       flex-direction: row;
       justify-content: center;
@@ -484,6 +406,27 @@ export default defineComponent({
 
       article {
         width: 60%;
+      }
+    }
+
+    .information {
+      gap: 5rem;
+
+      div {
+        flex-direction: row;
+        gap: 1.25rem;
+        figure {
+          width: 25rem;
+        }
+
+        article {
+          width: 100%;
+          text-align: justify;
+        }
+
+        &:nth-of-type(even) {
+          flex-direction: row-reverse;
+        }
       }
     }
   }
@@ -506,14 +449,20 @@ export default defineComponent({
       justify-content: space-around;
     }
 
-    // Quotes
-    .quotes {
-      display: flex;
-      flex-direction: row;
+    .information {
       justify-content: center;
-      gap: 1.5rem;
-      margin: 4rem 1.5rem;
+      div {
+        figure {
+          margin: 0;
+          width: 20rem;
+        }
+
+        article {
+          width: 60%;
+        }
+      }
     }
+
   }
 }
 </style>

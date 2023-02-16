@@ -22,11 +22,13 @@ import {
   faGlobe,
   faQuoteRight,
   faQuoteLeft,
+  faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
 library.add(
   faBehance,
+  faChevronRight,
   faGithub,
   faGlobe,
   faLinkedinIn,
