@@ -5,6 +5,7 @@
       role="button"
       :aria-label="$t('social-media-aria') + ' ' + id"
       :href="url"
+      tabindex="0"
     >
       <font-awesome-icon :icon="faIcon" />
     </a>
@@ -59,6 +60,10 @@ export default defineComponent({
     color: $bc-cyan;
     text-align: center;
     line-height: 5.2rem;
+
+	  &:focus{
+		  outline-color: $bc-magenta;
+	  }
   }
   .text {
     display: none;

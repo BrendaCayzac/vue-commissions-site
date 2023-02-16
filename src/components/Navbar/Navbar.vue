@@ -35,6 +35,8 @@
           :class="{
             'selected-language': language.language === selectedLanguage,
           }"
+          tabindex="0"
+          role="menuitem"
         >
           {{ windowWidth > 1000 ? language.language : language.shortLang }}
         </span>
@@ -201,19 +203,22 @@ nav {
       &.router-link-exact-active {
         font-weight: 700;
 
-        &:hover {
-          :hover {
+        &:hover, &:focus {
             background-color: $bc-cyan;
             font-weight: 700;
             color: #ffffff;
-          }
         }
+
+	      &:focus{
+		      border: 1px $bc-magenta solid;
+	      }
       }
 
-      &:hover {
+      &:hover, &:focus {
         background-color: #ffffff;
         font-weight: 700;
         color: $bc-magenta;
+	      outline: none;
       }
     }
 
@@ -229,8 +234,9 @@ nav {
         position: relative;
         text-transform: capitalize;
 
-        &:hover {
+        &:hover, &:focus {
           font-weight: bold;
+	        outline: none;
         }
 
         &::after {
@@ -253,10 +259,14 @@ nav {
         font-weight: bold;
         color: $bc-yellow;
 
-        &:hover {
+        &:hover, &:focus {
           cursor: default;
           pointer-events: none;
         }
+
+	      &:focus{
+		      color: #ffffff;
+	      }
       }
     }
   }
