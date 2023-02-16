@@ -1,19 +1,21 @@
 <template>
   <SiteNavbar />
   <router-view />
+  <SiteFooter />
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+
 import SiteNavbar from "@/components/Navbar/Navbar.vue";
+import SiteFooter from "@/components/Footer/Footer.vue";
 
 export default defineComponent({
-  components: { SiteNavbar },
+  components: { SiteFooter, SiteNavbar },
 });
 </script>
 
 <style lang="scss">
-
 @import "src/styles/reset";
 
 #app {

@@ -71,7 +71,8 @@
       </div>
     </section>
 
-	  <Quote quote="quote-paul-rand" author="Paul Rand"/>
+    <Quote quote="quote-paul-rand" author="Paul Rand" />
+
 
     <reload-window />
   </div>
@@ -462,7 +463,6 @@ export default defineComponent({
         }
       }
     }
-
   }
 }
 </style>

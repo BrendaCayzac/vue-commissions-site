@@ -13,9 +13,12 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 /* import specific icons */
 import {
   faLinkedinIn,
+  faLinkedin,
   faTwitter,
   faGithub,
+  faGithubSquare,
   faBehance,
+  faBehanceSquare,
 } from "@fortawesome/free-brands-svg-icons";
 
 import {
@@ -28,10 +31,13 @@ import {
 /* add icons to the library */
 library.add(
   faBehance,
+  faBehanceSquare,
   faChevronRight,
   faGithub,
+  faGithubSquare,
   faGlobe,
   faLinkedinIn,
+  faLinkedin,
   faQuoteRight,
   faQuoteLeft,
   faTwitter
