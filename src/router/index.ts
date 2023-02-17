@@ -17,7 +17,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/portfolio",
     name: "portfolio",
-    component: () => import("../views/AboutView.vue"),
+    component: () => import("../views/PortfolioView.vue"),
     meta: { title: "Portfolio" },
   },
   {
