@@ -3,7 +3,7 @@
     ref="scrollToTopButton"
     class="scroll-to-top"
     @click="scrollToTop"
-    :aria-label="$t('scroll-to-top')"
+    :aria-label="$t('Scroll to top')"
   >
     <font-awesome-icon icon="fa-solid fa-chevron-up" />
   </button>

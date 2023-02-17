@@ -1,10 +1,15 @@
 <template>
   <transition name="slide-fade">
-    <aside v-if="needsRefresh" class="refresh-window">
-      <p>There is <span>new content</span> available.</p>
+    <aside v-if="needsRefresh"  class="refresh-window">
+      <p>
+        {{ $t("There is") }} <span>{{ $t("new content") }}</span>
+        {{ $t("available") }}.
+      </p>
       <div>
-        <button type="button" class="focus" @click="reload">Reload</button>
-        <button type="button" @click="close">Close</button>
+        <button type="button" class="focus" @click="reload">
+          {{ $t("Reload") }}
+        </button>
+        <button type="button" @click="close">{{ $t("Close") }}</button>
       </div>
     </aside>
   </transition>
@@ -65,6 +70,7 @@ export default defineComponent({
   width: calc(100% - 20px);
   padding: 0.625rem;
   border: solid 1px $bc-magenta;
+	background-color: #ffffff;
   p {
     span {
       color: $bc-magenta;

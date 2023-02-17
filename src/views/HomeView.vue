@@ -13,7 +13,7 @@
       <!--Picture-->
       <figure id="image-of-me">
         <img src="../assets/photo.jpg" :alt="$t('my-photo-alt')" />
-        <figcaption>{{ $t("my-photo") }}</figcaption>
+        <figcaption>{{ $t("That's me") }}</figcaption>
       </figure>
       <article>
         <p>
@@ -62,7 +62,7 @@
           <p>{{ $t(info.text) }}</p>
           <a :href="info.link" role="button">
             <font-awesome-icon icon="fas fa-chevron-right" />
-            {{ $t("view-more") }}
+            {{ $t("View more") }}
             <svg class="rectangle">
               <rect x="0" y="0" fill="none" width="100%" height="100%" />
             </svg>
@@ -72,9 +72,6 @@
     </section>
 
     <Quote quote="quote-paul-rand" author="Paul Rand" />
-
-
-    <reload-window />
   </div>
 </template>
 
@@ -84,12 +81,11 @@ import { defineComponent, ref, onBeforeUnmount, onMounted } from "vue";
 
 import Quote from "@/components/Quote/Quote.vue";
 import SocialMedia from "@/components/SocialMedia/SocialMedia.vue";
-import ReloadWindow from "@/components/ReloadWindow.vue";
 import { getImgUrl } from "@/helpers/getImage";
 
 export default defineComponent({
   name: "HomeView",
-  components: { FontAwesomeIcon, Quote, ReloadWindow, SocialMedia },
+  components: { FontAwesomeIcon, Quote, SocialMedia },
   setup() {
     const headerRotation = ref(false);
 
@@ -123,29 +119,29 @@ export default defineComponent({
     const information = [
       {
         src: "web_design",
-        srcAlt: "example-of",
+        srcAlt: "Example of",
         title: "development",
         text: "development-information",
         link: "https://github.com/BrendaCayzac?tab=repositories",
       },
       {
         src: "Jacques_reveal",
-        srcAlt: "example-of",
+        srcAlt: "Example of",
         title: "illustration",
         text: "illustration-information",
         link: "/commissions",
       },
       {
         src: "graphic_design",
-        srcAlt: "example-of",
+        srcAlt: "Example of",
         title: "graphic-design",
         text: "graphic-design-information",
         link: "https://www.behance.net/brendacayzeb7a",
       },
       {
         src: "motion_graphics",
-        srcAlt: "example-of",
-        title: "motion-graphics",
+        srcAlt: "Example of",
+        title: "Motion graphics",
         text: "motion-graphics-information",
         link: "/portfolio",
       },

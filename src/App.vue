@@ -3,17 +3,20 @@
   <router-view />
   <SiteFooter />
   <ScrollToTopButton />
+
+  <reload-window />
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 
+import ReloadWindow from "@/components/ReloadWindow.vue";
+import ScrollToTopButton from "@/components/ScrollToTopButton/ScrollToTopButton.vue";
 import SiteNavbar from "@/components/Navbar/Navbar.vue";
 import SiteFooter from "@/components/Footer/Footer.vue";
-import ScrollToTopButton from "@/components/ScrollToTopButton/ScrollToTopButton.vue";
 
 export default defineComponent({
-  components: { ScrollToTopButton, SiteFooter, SiteNavbar },
+  components: { ReloadWindow, ScrollToTopButton, SiteFooter, SiteNavbar },
 });
 </script>
 

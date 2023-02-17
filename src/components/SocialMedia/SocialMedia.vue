@@ -3,7 +3,7 @@
     <a
       class="button"
       role="button"
-      :aria-label="$t('social-media-aria') + ' ' + id"
+      :aria-label="$t('Link to Brenda Cayzac\'s') + ' ' + id"
       :href="url"
       tabindex="0"
     >
