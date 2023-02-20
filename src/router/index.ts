@@ -11,7 +11,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/commissions",
     name: "commissions",
-    component: () => import("../views/AboutView.vue"),
+    component: () => import("../views/CommissionsView.vue"),
     meta: { title: "Commissions" },
   },
   {
