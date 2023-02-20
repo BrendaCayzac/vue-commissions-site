@@ -27,6 +27,8 @@ import {
   faQuoteLeft,
   faChevronRight,
   faChevronUp,
+  faMinus,
+  faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
@@ -40,6 +42,8 @@ library.add(
   faGlobe,
   faLinkedinIn,
   faLinkedin,
+  faMinus,
+  faPlus,
   faQuoteRight,
   faQuoteLeft,
   faTwitter

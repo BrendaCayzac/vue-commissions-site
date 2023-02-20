@@ -14,16 +14,21 @@
         />
       </figure>
     </section>
+    <section>
+      <MoreInformation title="illustration" :categories="illustrationPrices" />
+    </section>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 
+import MoreInformation from "@/components/MoreInformation/MoreInformation.vue";
 import { getImgUrl } from "@/helpers/getImage";
 
 export default defineComponent({
   name: "CommissionsView",
+  components: { MoreInformation },
 
   setup() {
     const examples = [
@@ -35,9 +40,64 @@ export default defineComponent({
       "example6",
     ];
 
+    const illustrationPrices = [
+      {
+        title: "Line art",
+        file: "lineart",
+        alt: "line illustration",
+        prices: [
+          { text: "Headshot/Bust", price: "US$10" },
+          { text: "Waist up", price: "US$15" },
+          { text: "Full-Body", price: "US$20" },
+          { text: "Extra Character", price: "+US$15" },
+        ],
+      },
+      {
+        title: "Flat colors",
+        file: "flat",
+        alt: "flat colors illustration",
+        prices: [
+          { text: "Headshot/Bust", price: "US$10" },
+          { text: "Waist up", price: "US$20" },
+          { text: "Full-Body", price: "US$35" },
+          { text: "Extra Character", price: "+US$25" },
+        ],
+      },
+      {
+        title: "Shaded",
+        file: "shaded",
+        alt: "shaded illustration",
+        prices: [
+          { text: "Headshot/Bust", price: "US$25" },
+          { text: "Waist up", price: "US$40" },
+          { text: "Full-Body", price: "US$65" },
+          { text: "Extra Character", price: "+US$45" },
+        ],
+      },
+      {
+        title: "Backgrounds",
+        file: "backs",
+        alt: "backgrounds",
+        prices: [
+          { text: "Simple", price: "US$10" },
+          { text: "Complex", price: "US$35" },
+        ],
+      },
+      {
+        title: "Others",
+        prices: [
+          {
+            text: "Comics, icons, merchandise, special illustrations",
+            price: "US$15 per hour / consult the artist",
+          },
+        ],
+      },
+    ];
+
     return {
       examples,
       getImgUrl,
+      illustrationPrices,
     };
   },
 });
@@ -90,26 +150,26 @@ export default defineComponent({
     }
   }
 
-	.previous-work{
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-		gap: 1rem;
-		margin-bottom: 1rem;
+  .previous-work {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
 
-		figure {
-			width: 48%;
-			background-color: rgba($bc-cyan, .25);
-			img {
-				width: auto;
-				height: 100%;
-				object-fit: cover;
-			}
-		}
-	}
+    figure {
+      width: 48%;
+      background-color: rgba($bc-cyan, 0.25);
+      img {
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
 }
 
-/* Tablet*/
+/* Tablet */
 @media (min-width: $tablet) {
   .commissions {
     padding-top: 0;
@@ -120,11 +180,11 @@ export default defineComponent({
       }
     }
 
-	  .previous-work{
-		  figure {
-			  width: 32%;
-		  }
-	  }
+    .previous-work {
+      figure {
+        width: 32%;
+      }
+    }
   }
 }
 </style>
