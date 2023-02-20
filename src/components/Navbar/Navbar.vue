@@ -20,7 +20,9 @@
     <ul v-if="showMenu || windowWidth > 768" class="menu">
       <li v-for="(route, index) in routes" :key="index">
         <router-link :to="route.path">{{
-          $t(route.name.toString())
+          route.name.toString() === "commissions"
+            ? $tc("commission", 2)
+            : $t(route.name.toString())
         }}</router-link>
       </li>
       <li class="language-selection">
@@ -203,22 +205,24 @@ nav {
       &.router-link-exact-active {
         font-weight: 700;
 
-        &:hover, &:focus {
-            background-color: $bc-cyan;
-            font-weight: 700;
-            color: #ffffff;
+        &:hover,
+        &:focus {
+          background-color: $bc-cyan;
+          font-weight: 700;
+          color: #ffffff;
         }
 
-	      &:focus{
-		      border: 1px $bc-magenta solid;
-	      }
+        &:focus {
+          border: 1px $bc-magenta solid;
+        }
       }
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         background-color: #ffffff;
         font-weight: 700;
         color: $bc-magenta;
-	      outline: none;
+        outline: none;
       }
     }
 
@@ -234,9 +238,10 @@ nav {
         position: relative;
         text-transform: capitalize;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           font-weight: bold;
-	        outline: none;
+          outline: none;
         }
 
         &::after {
@@ -259,14 +264,15 @@ nav {
         font-weight: bold;
         color: $bc-yellow;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           cursor: default;
           pointer-events: none;
         }
 
-	      &:focus{
-		      color: #ffffff;
-	      }
+        &:focus {
+          color: #ffffff;
+        }
       }
     }
   }
