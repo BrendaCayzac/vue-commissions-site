@@ -6,6 +6,8 @@
         <span>{{ $t("information and prices") }}</span>
       </h1>
     </header>
+
+    <!-- Previous work-->
     <section class="previous-work">
       <figure v-for="(example, i) in examples" :key="i">
         <img
@@ -14,8 +16,64 @@
         />
       </figure>
     </section>
+
+    <!-- Prices -->
     <section>
       <MoreInformation title="illustration" :categories="illustrationPrices" />
+      <MoreInformation
+        title="Graphic Design"
+        :categories="graphicDesignPrices"
+      />
+      <MoreInformation title="Web Design" :categories="webDesignPrices" />
+    </section>
+
+    <!-- Text -->
+    <section class="general-information">
+      <h2>General Information</h2>
+      <p>
+        I do not work with written contracts. However, every commission is
+        detailed in writing and confirmed before its start to avoid
+        uncomfortable situations or misunderstandings. At every step of the
+        process, the commissioner gets an update on the project in writing and a
+        sample of the work. If you have questions, feel free to message me via
+        brendacayzac@gmail.com.
+      </p>
+      <div class="specifics">
+        <div>
+          <h2>Payment</h2>
+          <p>
+            Payment dates will be discussed with the client. A schedule can be
+            arranged for invoices, which contained an itemized list of the
+            commission. All payments are done via Paypal.
+          </p>
+        </div>
+        <div>
+          <h2>Deadlines</h2>
+          <p>
+            The finalization dates of each commission depend the complexity of
+            the work. The client will be updated during each step of the work,
+            and there will be rounds of feedback and corrections.
+          </p>
+        </div>
+        <div>
+          <h2>Disclaimer</h2>
+          <p>
+            <b> I will not draw</b> : extreme political subjects, gore, vore,
+            exaggerated proportions, explicit NSFW, or hate images. <br />
+            When an illustration commission is finished, the client will receive
+            a full resolution version of it. However, I will not remove the
+            signature and I ask kindly not to remove it either. No worries, it
+            won't be in the way anything. <br />My commissions are not created
+            for commercial use or sale or be used in any blockchain-related
+            technology, to include NFTs cryptocurrency, or future inventions in
+            the space. If the client plans on making merchandise with it, I
+            should be notified. If desired, the client can request the original
+            editable file(s). In the case of brand design/identity design, the
+            clients will receive all the .psd, .svg, and or .ai related to the
+            commission.
+          </p>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -94,10 +152,53 @@ export default defineComponent({
       },
     ];
 
+    const graphicDesignPrices = [
+      {
+        title: "Vectors",
+        file: "vector",
+        alt: "Vectors",
+        prices: [
+          { text: "Simple", price: "US$15" },
+          { text: "Complex", price: "US$30" },
+        ],
+      },
+      {
+        title: "Brands",
+        file: "brand",
+        alt: "brand design",
+        prices: [
+          { text: "Brand redesign", price: "US$25/h" },
+          { text: "Brand design", price: "US$35/h" },
+          { text: "Brand identity", price: "US$25/h" },
+        ],
+      },
+      {
+        title: "Motion graphics",
+        file: "motion_graphics",
+        alt: "motion graphics",
+        prices: [{ text: "Hourly rate", price: "US$25/h" }],
+      },
+    ];
+
+    const webDesignPrices = [
+      {
+        title: "Web design",
+        file: "web_design",
+        alt: "web design",
+        prices: [
+          { text: "Front-end", price: "US$35" },
+          { text: "Back-end", price: "US$45" },
+          { text: "Full-stack", price: "US$55" },
+        ],
+      },
+    ];
+
     return {
       examples,
       getImgUrl,
+      graphicDesignPrices,
       illustrationPrices,
+      webDesignPrices,
     };
   },
 });
@@ -167,6 +268,10 @@ export default defineComponent({
       }
     }
   }
+
+	.general-information{
+
+	}
 }
 
 /* Tablet */
