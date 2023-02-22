@@ -29,51 +29,30 @@
 
     <!-- Text -->
     <section class="general-information">
-      <h2>General Information</h2>
+      <h2>{{ $t("General Information") }}</h2>
       <p>
-        I do not work with written contracts. However, every commission is
-        detailed in writing and confirmed before its start to avoid
-        uncomfortable situations or misunderstandings. At every step of the
-        process, the commissioner gets an update on the project in writing and a
-        sample of the work. If you have questions, feel free to message me via
+        {{ $t("general-information-text") }}
         <span> brendacayzac@gmail.com</span>.
       </p>
       <div class="specifics">
         <div class="container">
           <div>
-            <h3>Payment</h3>
-            <p>
-              Payment dates will be discussed with the client. A schedule can be
-              arranged for invoices, which contained an itemized list of the
-              commission. All payments are done via Paypal.
-            </p>
+            <h3>{{ $t("Payment") }}</h3>
+            <p>{{ $t("payment-information") }}.</p>
           </div>
           <div>
-            <h3>Deadlines</h3>
-            <p>
-              The finalization dates of each commission depend the complexity of
-              the work. The client will be updated during each step of the work,
-              and there will be rounds of feedback and corrections.
-            </p>
+            <h3>{{ $t("Deadlines") }}</h3>
+            <p>{{ $t("deadlines-information") }}.</p>
           </div>
         </div>
         <div>
-          <h3>Disclaimer</h3>
+          <h3>{{ $t("Disclaimer") }}</h3>
           <p>
-            <b>I will not draw</b>: extreme political subjects, gore, vore,
-            exaggerated proportions, explicit NSFW, or hate images. <br />
+            <b>{{ $t("I will not draw") }}</b
+            >: {{ $t("disclaimer1") }}. <br />
             <br />
-            When an illustration commission is finished, the client will receive
-            a full resolution version of it. However, I will not remove the
-            signature and I ask kindly not to remove it either. No worries, it
-            won't be in the way anything. <br />
-            <br />My commissions are not created for commercial use or sale or
-            be used in any blockchain-related technology, to include NFTs
-            cryptocurrency, or future inventions in the space. If the client
-            plans on making merchandise with it, I should be notified. If
-            desired, the client can request the original editable file(s). In
-            the case of brand design/identity design, the clients will receive
-            all the .psd, .svg, and or .ai related to the commission.
+            {{ $t("disclaimer2") }}. <br />
+            <br />{{ $t("disclaimer3") }}.
           </p>
         </div>
       </div>
@@ -274,16 +253,24 @@ export default defineComponent({
 
   .general-information {
     padding: 2rem 0;
-	  h2 {
-		  font-weight: 400;
-		  font-size: 1.8rem;
-		  color: $bc-cyan;
-		  margin-bottom: 0.625rem;
-		  font-family: "Roboto Condensed", sans-serif;
+    h2 {
+      font-weight: 400;
+      font-size: 1.8rem;
+      color: $bc-cyan;
+      margin-bottom: 0.625rem;
+      font-family: "Roboto Condensed", sans-serif;
+    }
+
+	  p {
+		  margin-bottom: 0.5rem;
+		  text-align: justify;
+
+		  span {
+			  color: $bc-cyan;
+		  }
 	  }
 
-
-	  .specifics {
+    .specifics {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -297,14 +284,6 @@ export default defineComponent({
         margin-top: 1.5rem;
       }
 
-      p {
-        margin-bottom: 0.5rem;
-        text-align: justify;
-
-        span {
-          color: $bc-cyan;
-        }
-      }
     }
   }
 }
@@ -331,11 +310,11 @@ export default defineComponent({
       .specifics {
         flex-direction: row;
         align-items: start;
-	      gap: 1rem;
+        gap: 1rem;
 
-	      h3 {
-		      margin-top: 1.25rem;
-	      }
+        h3 {
+          margin-top: 1.25rem;
+        }
       }
     }
   }
