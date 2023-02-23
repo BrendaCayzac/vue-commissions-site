@@ -16,6 +16,10 @@
         @change-category="selectedCategory = $event"
       />
     </div>
+
+	  <section>
+		  <PortfolioExample/>
+	  </section>
   </div>
 </template>
 
@@ -24,11 +28,12 @@ import { defineComponent, ref } from "vue";
 
 import CategoriesButton from "@/components/Buttons/CategoriesButton.vue";
 import Header from "@/components/Header/Header.vue";
+import PortfolioExample from "@/components/PortfolioExample/PortfolioExample.vue";
 import Quote from "@/components/Quote/Quote.vue";
 
 export default defineComponent({
   name: "PortfolioView",
-  components: { CategoriesButton, Header, Quote },
+  components: { CategoriesButton, Header, PortfolioExample, Quote },
 
   setup() {
     const categories = [
@@ -62,6 +67,13 @@ export default defineComponent({
     gap: 1rem;
     padding: 0 1.5rem;
   }
+
+	section{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 2rem 1.5rem;
+	}
 }
 
 /* Tablet*/

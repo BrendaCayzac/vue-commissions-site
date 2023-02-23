@@ -28,6 +28,7 @@ import {
   faChevronRight,
   faChevronUp,
   faMinus,
+  faLink,
   faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -40,6 +41,7 @@ library.add(
   faGithub,
   faGithubSquare,
   faGlobe,
+  faLink,
   faLinkedinIn,
   faLinkedin,
   faMinus,
