@@ -7,10 +7,6 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-type Emits = {
-	(e:"changeCategory", category:string):void;
-}
-
 export default defineComponent({
   name: "CategoriesButton",
 

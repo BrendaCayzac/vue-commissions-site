@@ -1,11 +1,7 @@
 <template>
   <div class="commissions">
-    <header>
-      <h1>
-        {{ $tc("commission", 2) }}
-        <span>{{ $t("information and prices") }}</span>
-      </h1>
-    </header>
+	  <Header :plural="true" title="commission"
+	          subtitle="information and prices"/>
 
     <!-- Previous work-->
     <section class="previous-work">
@@ -63,12 +59,13 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
+import Header from "@/components/Header/Header.vue";
 import MoreInformation from "@/components/MoreInformation/MoreInformation.vue";
 import { getImgUrl } from "@/helpers/getImage";
 
 export default defineComponent({
   name: "CommissionsView",
-  components: { MoreInformation },
+  components: { Header, MoreInformation },
 
   setup() {
     const examples = [
@@ -191,47 +188,6 @@ export default defineComponent({
 
 .commissions {
   padding: 3.75rem 1.5rem 3rem;
-  header {
-    position: relative;
-    width: 100%;
-    padding: 2em;
-    margin: 1.5em;
-    text-align: center;
-
-    h1 {
-      position: relative;
-      padding: 0;
-      margin: 0;
-      font-weight: 300;
-      font-size: 2.5rem;
-      color: #202020;
-      transition: all 0.3s ease 0s;
-      -o-transition: all 0.3s ease 0s;
-      -webkit-transition: all 034s ease 0s;
-
-      &::before {
-        position: absolute;
-        bottom: 0;
-        width: 60px;
-        height: 2px;
-        content: "";
-        background-color: $bc-magenta;
-        left: 50%;
-        margin-left: -30px;
-      }
-
-      span {
-        display: block;
-        font-size: 0.5em;
-        text-transform: uppercase;
-        font-weight: 500;
-        letter-spacing: 4px;
-        line-height: 1.5em;
-        color: $bc-gray;
-        padding-bottom: 1.5rem;
-      }
-    }
-  }
 
   .previous-work {
     display: flex;
@@ -261,14 +217,14 @@ export default defineComponent({
       font-family: "Roboto Condensed", sans-serif;
     }
 
-	  p {
-		  margin-bottom: 0.5rem;
-		  text-align: justify;
+    p {
+      margin-bottom: 0.5rem;
+      text-align: justify;
 
-		  span {
-			  color: $bc-cyan;
-		  }
-	  }
+      span {
+        color: $bc-cyan;
+      }
+    }
 
     .specifics {
       display: flex;
@@ -283,7 +239,6 @@ export default defineComponent({
         margin-bottom: 0.5rem;
         margin-top: 1.5rem;
       }
-
     }
   }
 }
@@ -292,13 +247,6 @@ export default defineComponent({
 @media (min-width: $tablet) {
   .commissions {
     padding-top: 0;
-    header {
-      text-align: start;
-      h1:before {
-        left: 0.75em;
-      }
-    }
-
     .previous-work {
       figure {
         width: 32%;
