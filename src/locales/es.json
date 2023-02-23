@@ -67,5 +67,12 @@
   "I will not draw": "No voy a dibujar",
   "disclaimer1": "temas políticos, violencia extrema, proporciones exageradas, material explícito o imágenes de odio",
   "disclaimer2": "Cuando una ilustración se haya completado, el cliente recibirá una imagen en alta resolución del producto terminado. No removeré mi firma y pido que mi firma no sea removida. No se preocupe, no se hallará en un lugar importante de la pieza",
-  "disclaimer3": "Mis comisiones no están creadas para uso comercial y no deberán ser utilizadas para tecnologías block-chain NFTs o alguna tecnología relacionada. Si el cliente desea crear mercadería con la comisión, debo ser notificada del hecho. El cliente puede pedir el editable de la comisión y este será enviado. En caso de un diseño de marca o de identidad, el cliente va a recibir todos los archivos .svg, .psd, y/o .ai relacionados al trabajo"
+  "disclaimer3": "Mis comisiones no están creadas para uso comercial y no deberán ser utilizadas para tecnologías block-chain NFTs o alguna tecnología relacionada. Si el cliente desea crear mercadería con la comisión, debo ser notificada del hecho. El cliente puede pedir el editable de la comisión y este será enviado. En caso de un diseño de marca o de identidad, el cliente va a recibir todos los archivos .svg, .psd, y/o .ai relacionados al trabajo",
+  "advertisement": "publicidad",
+  "brands": "marcas",
+  "editorial": "editorial",
+  "packaging": "packaging",
+  "web": "web",
+  "all": "todos",
+  "categories": "categorías"
 }
