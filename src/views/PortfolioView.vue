@@ -1,17 +1,40 @@
 <template>
   <div class="portfolio">
     <Quote quote="quote-emil-cioran" author="Emil Cioran" />
+    <CategoriesButton
+      v-for="(category, i) in categories"
+      :key="i"
+      :text="category"
+      @change-category="selectedCategory=$event"
+    />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 
+import CategoriesButton from "@/components/Buttons/CategoriesButton.vue";
 import Quote from "@/components/Quote/Quote.vue";
 
 export default defineComponent({
   name: "PortfolioView",
-  components: { Quote },
+  components: { CategoriesButton, Quote },
+
+  setup() {
+    const categories = [
+      "advertisement",
+      "brands",
+      "editorial",
+      "illustration",
+      "packaging",
+      "web",
+      "all",
+    ];
+
+    const selectedCategory = ref("all");
+
+    return { categories, selectedCategory };
+  },
 });
 </script>
 
