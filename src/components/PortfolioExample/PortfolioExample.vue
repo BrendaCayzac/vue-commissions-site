@@ -5,7 +5,10 @@
       selectedCategory === 'all' || selectedCategory === portfolioItem.category
     "
   >
-    <img :src="getImgUrl(portfolioItem.img, 'jpg')" :alt="portfolioItem.alt" />
+    <img
+      :src="getImgUrl(portfolioItem.img, 'jpg')"
+      alt="{{$t(portfolioItem.alt)}}"
+    />
 
     <!-- Information -->
     <div class="info">
@@ -150,8 +153,8 @@ $portfolio-item-info-offset: 7px;
     position: relative;
     width: 18.75rem;
     height: 18.75rem;
-	  border: 1px solid $bc-magenta;
-	  box-shadow: 2px 2px 1px 2px $bc-magenta;
+    border: 1px solid $bc-magenta;
+    box-shadow: 2px 2px 1px 2px $bc-magenta;
 
     img {
       width: auto;
@@ -167,8 +170,8 @@ $portfolio-item-info-offset: 7px;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-	    padding: 0 1rem;
-      background-color: rgba(255, 255, 255, 0.90);
+      padding: 0 1rem;
+      background-color: rgba(255, 255, 255, 0.9);
       width: calc(100% - 2 * #{$portfolio-item-info-offset});
       height: calc(100% - 2 * #{$portfolio-item-info-offset});
       transform: scale(1.1);
@@ -210,10 +213,10 @@ $portfolio-item-info-offset: 7px;
         @include transition-mix;
       }
 
-	    .date{
-		    font-weight: 700;
-		    container: $bc-magenta;
-	    }
+      .date {
+        font-weight: 700;
+        container: $bc-magenta;
+      }
 
       .link {
         display: block;

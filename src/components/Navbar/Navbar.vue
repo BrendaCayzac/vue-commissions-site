@@ -298,6 +298,10 @@ nav {
         a {
           padding: 0.625rem 1rem;
         }
+
+	      &:last-child{
+		      padding: 0 1.5rem 0 0;
+	      }
       }
 
       .language-selection {

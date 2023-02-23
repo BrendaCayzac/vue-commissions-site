@@ -58,7 +58,7 @@ export default defineComponent({
 		    category: "web",
 		    link: "#",
 		    description:
-				    "This site!",
+				    "vue-site-description",
 	    },
 	    {
 		    name: "DnD Portraits",
@@ -68,7 +68,7 @@ export default defineComponent({
 		    category: "illustration",
 		    link: "https://www.behance.net/gallery/164478237/Dnd-Portraits",
 		    description:
-				    "I created some portraits for three PC characters of mine",
+				    "dnd-description",
 	    },
 	    {
 		    name: "Funny aprons",
@@ -78,7 +78,7 @@ export default defineComponent({
 		    category: "illustration",
 		    link: "https://twitter.com/BrendaCayzac/status/1580646937849520129",
 		    description:
-				    "Different RWBY characters posing with aprons",
+				    "aprons-description",
 	    },
       {
         name: "LëtzPark",
@@ -88,17 +88,17 @@ export default defineComponent({
         category: "brands",
         link: "https://www.behance.net/gallery/110459405/LetzPark?",
         description:
-          "This brand was created for a solution for parking in Luxembourg",
+          "letz-description",
       },
       {
         name: "Vanilla personal site",
         img: "foto",
-        alt: "My brand",
+        alt: "Original site",
         date: 2020,
-        category: "Web",
+        category: "web",
         link: "https://brendacayzac.netlify.app/pages/home",
         description:
-          "A previous version of this site",
+          "original-site",
       },
       {
         name: "Chloe Price",
@@ -108,7 +108,7 @@ export default defineComponent({
         category: "illustration",
         link: "https://brendacayzac.tumblr.com/image/639042993815519232",
         description:
-          "Portrait of Square Enix's Life is Strange character Chloe Price",
+          "chloe-price-description",
       },
       {
         name: "Beauty Squad Redesign",
@@ -118,7 +118,7 @@ export default defineComponent({
         category: "brands",
         link: "https://www.behance.net/gallery/100108499/Brand-Redesign",
         description:
-          "Hairshop.lu reached out with the desire to stylize a sub-brand",
+          "beauty-squad-description",
       },
       {
         name: "Powder Shampoo",
@@ -128,7 +128,7 @@ export default defineComponent({
         category: "advertisement",
         link: "https://www.behance.net/gallery/94549593/Powder-Shampoo-Motion-Graphics",
         description:
-          "A short animated informative video for Hairshop.lu's new product",
+          "powder-shampoo-description",
       },
       {
         name: "Pathologic Portrait I",
@@ -138,7 +138,7 @@ export default defineComponent({
         category: "illustration",
         link: "https://www.behance.net/gallery/91947859/Pathologic-Character-Portraits",
         description:
-          "Portrait of Pathologic character Daniil Dankovsky (The Bachelor)",
+          "daniil-description",
       },
       {
         name: "Pathologic Portrait II",
@@ -148,7 +148,7 @@ export default defineComponent({
         category: "illustration",
         link: "https://www.behance.net/gallery/91947859/Pathologic-Character-Portraits",
         description:
-          "Portrait of Pathologic character Clara Subarov (Changeling)",
+          "clara-description",
       },
       {
         name: "Pathologic Portrait III",
@@ -158,7 +158,7 @@ export default defineComponent({
         category: "illustration",
         link: "https://www.behance.net/gallery/91947859/Pathologic-Character-Portraits",
         description:
-          "Portrait of Pathologic character Artemy Burakh (Haruspex)",
+          "artemy-description",
       },
       {
         name: "RWBY - Memento Mori",
@@ -168,7 +168,7 @@ export default defineComponent({
         category: "illustration",
         link: "https://www.behance.net/gallery/86753215/Memento-Mori",
         description:
-          "An illustration of the characters from Rooster Teeth's Team RWBY",
+          "memento-mori-description",
       },
       {
         name: "Ambiental Facility Service",
@@ -178,17 +178,17 @@ export default defineComponent({
         category: "brands",
         link: "https://www.behance.net/gallery/67900493/Brand-design-Ambiental-Facility-Service-SRL",
         description:
-          "A startup owner required a brand that could combine both services provided by the company: cleaning and fumigation",
+          "afs-description",
       },
       {
         name: "Sample Graphics",
         img: "tiptut",
-        alt: "Motion graphics",
+        alt: "AFS Brand",
         date: 2018,
-        category: "Advertisement",
+        category: "advertisement",
         link: "https://www.behance.net/gallery/63644693/Motion-Graphics-Sample",
         description:
-          "A small showcase of symbol animations for motion graphic videos based on TipTut's tutorial on YouTube",
+          "tip-tut-description",
       },
       {
         name: "Wakfu",
@@ -198,7 +198,7 @@ export default defineComponent({
         category: "illustration",
         link: "https://brendacayzac.tumblr.com/image/172744255033",
         description:
-          "The main cast of Ankama's Wakfu TV series running away from trouble",
+          "wakfu-description",
       },
       {
         name: "Gualeguaychú",
@@ -208,7 +208,7 @@ export default defineComponent({
         category: "brands",
         link: "https://www.behance.net/gallery/52958537/Brand-Identity-Design-Diseno-de-Identidad-de-Marca",
         description:
-          "The city of Gualeguaychú requested several designs for their new tourism brand. This was a college assignment",
+          "gualeguaychu-brand-description",
       },
       {
         name: "Códice",
@@ -218,7 +218,7 @@ export default defineComponent({
         category: "brands",
         link: "https://www.behance.net/gallery/51151157/Brand-Design-Codice",
         description:
-          "A visual media company that takes inspiration in European medieval art requested a bran design that could encapsulate ideas",
+          "codice-description",
       },
       {
         name: "Nike History",
@@ -228,7 +228,7 @@ export default defineComponent({
         category: "editorial",
         link: "https://www.behance.net/gallery/43965347/Nike-Pieza-Editorial",
         description:
-          "Book design for a college project based on Nike's history. The book contained diagrams, advertising pieces and interviews",
+          "nike-book-description",
       },
       {
         name: "puto el que lee",
@@ -238,7 +238,7 @@ export default defineComponent({
         category: "editorial",
         link: "https://www.behance.net/gallery/43968125/Puto-el-que-lee-esto",
         description:
-          "College project based on the exploration of editorial expression utilizing Fontanarossa's famous piece 'puto el que lee esto'",
+          "puto-description",
       },
       {
         name: "MissingNo",
@@ -248,17 +248,17 @@ export default defineComponent({
         category: "editorial",
         link: "https://www.behance.net/gallery/43971821/Revista-MissingNo",
         description:
-          "Proposed design for a magazine about video games and technology based on geek culture",
+          "missingno-magazine-description",
       },
       {
         name: "Smooth",
         img: "smooth",
-        alt: "Smooth Prototype",
+        alt: "Smooth prototype",
         date: 2016,
         category: "packaging",
         link: "https://www.behance.net/gallery/43968565/Tetrapak-Smooth",
         description:
-          "Proposed design for a smoothie inspired product based on American 50s aesthetic and style",
+          "smooth-description",
       },
       {
         name: "Mom^2",
@@ -268,93 +268,84 @@ export default defineComponent({
         category: "illustration",
         link: "https://www.behance.net/gallery/43969061/Mom2-Steven-Universe-Illustration",
         description:
-          "Illustration of Steven Universe's characters: Garnet, Sapphire, and Ruby",
+          "mom-description",
       },
       {
         name: "Xipotli",
         img: "xipotli",
-        alt: "Xipotli Prototype",
+        alt: "Xipotli prototype",
         date: 2016,
         category: "packaging",
         link: "https://www.behance.net/gallery/43968787/Packaging-Xipotli",
         description:
-          "Proposed design for a chipotle flavored mayonnaise packaging inspired in classic mexican culture.",
+          "xipotli-description",
       },
       {
         name: "Nike Vintage",
         img: "vintage",
-        alt: "Nike vintage Poster",
+        alt: "Nike vintage poster",
         date: 2016,
         category: "advertisement",
         link: "https://www.behance.net/gallery/43964673/Estilos-Graficos-Publicidad-Nike",
         description:
-          "The collage was made using Argentinian illustrations from the beginning of the 20th century",
+          "nike-vintage-description",
       },
       {
         name: "Nike Japanese Techno",
         img: "japanese",
-        alt: "Nike Japanese Techno Poster",
+        alt: "Nike Japanese Techno poster",
         date: 2016,
         category: "advertisement",
         link: "https://www.behance.net/gallery/43964673/Estilos-Graficos-Publicidad-Nike",
         description:
-          "A Japanese Pop Techno inspired poster for a Nike oriented project.",
+          "nike-japanese-techno-description",
       },
       {
         name: "Nike Organic",
         img: "organic",
-        alt: "Nike Organic Poster",
+        alt: "Nike Organic poster",
         date: 2016,
         category: "advertisement",
         link: "https://www.behance.net/gallery/43964673/Estilos-Graficos-Publicidad-Nike",
-        description: "An organic inspired poster for a Nike oriented project.",
-      },
-      {
-        name: "Nike Techno",
-        img: "techno",
-        alt: "Nike Techno Poster",
-        date: 2016,
-        category: "advertisement",
-        link: "https://www.behance.net/gallery/43964673/Estilos-Graficos-Publicidad-Nike",
-        description: "A techno inspired poster for a Nike oriented project.",
+        description: "nike-organic-description",
       },
       {
         name: "Nike Garage",
         img: "garage",
-        alt: "Nike Garage Poster",
+        alt: "Nike Garage poster",
         date: 2016,
         category: "advertisement",
         link: "https://www.behance.net/gallery/43964673/Estilos-Graficos-Publicidad-Nike",
-        description: "A 90s inspired poster for a Nike oriented project.",
+        description: "nike-garage-description"
       },
       {
         name: "Nike Infography",
         img: "infography",
-        alt: "Nike Infography Poster",
+        alt: "Nike Infography poster",
         date: 2016,
         category: "advertisement",
         link: "https://www.behance.net/gallery/43964673/Estilos-Graficos-Publicidad-Nike",
-        description: "An infographic poster for a Nike oriented project.",
+        description: "nike-infography-description",
       },
       {
         name: "Nike Tangible",
         img: "material",
-        alt: "Nike Tangible Poster",
+        alt: "Nike Tangible poster",
         date: 2016,
         category: "advertisement",
         link: "https://www.behance.net/gallery/43964673/Estilos-Graficos-Publicidad-Nike",
         description:
-          "A tangible poster for a Nike oriented project made with physical elements and digital retouching.",
+          "nike-tangible-description",
       },
       {
         name: "Happy Never After",
         img: "marina",
-        alt: "Nike Tangible Poster",
+        alt: "Happy Ever after CD",
         date: 2016,
         category: "advertisement",
         link: "https://www.behance.net/gallery/43968357/Fan-CD-Marina-The-Diamonds",
         description:
-          "A mock up of a fan made CD of singer and composer Marina Diamandis",
+          "cd-description",
       },
     ];
 

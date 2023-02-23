@@ -185,6 +185,7 @@ export default defineComponent({
     position: relative;
     height: 18rem;
     overflow: hidden;
+	  width: 100%;
     .header-bg {
       position: absolute;
       top: 0;
