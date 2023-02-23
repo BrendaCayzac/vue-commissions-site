@@ -40,6 +40,7 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   transition: all 0.3s;
+	cursor: pointer;
 
   i {
     position: absolute;
