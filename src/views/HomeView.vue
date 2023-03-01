@@ -178,288 +178,289 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import "src/styles/custom";
-
 .home {
-  padding-top: 3.75rem;
-  header {
-    position: relative;
-    height: 18rem;
-    overflow: hidden;
-	  width: 100%;
-    .header-bg {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: $bc-cyan;
-      transform-origin: top right;
-      z-index: -1;
-      transition: all 0.2s ease;
-    }
-    .categories {
-      padding-top: 3rem;
-      p {
-        margin: 0 1.5rem 0 0;
-        line-height: 3.5rem;
-        font-size: 3rem;
-        font-weight: 200;
-        color: white;
-        width: 100%;
-        text-align: center;
-        transition: 1s transform;
-      }
-    }
+	padding-top: 3.75rem;
+	header {
+		position: relative;
+		height: 18rem;
+		overflow: hidden;
+		width: 100%;
+		.header-bg {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: $bc-cyan;
+			transform-origin: top right;
+			z-index: -1;
+			transition: all 0.2s ease;
+		}
+		.categories {
+			padding-top: 3rem;
+			p {
+				margin: 0 1.5rem 0 0;
+				line-height: 3.5rem;
+				font-size: 3rem;
+				font-weight: 200;
+				color: white;
+				width: 100%;
+				text-align: center;
+				transition: 1s transform;
+			}
+		}
 
-    // Transition
-    .header-bg.rotated {
-      transform: skewY(15deg);
-    }
+		// Transition
+		.header-bg.rotated {
+			transform: skewY(15deg);
+		}
 
-    .categories.align-right {
-      p {
-        text-align: right;
-        padding-right: 3rem;
-        transform: translateX(1%);
-      }
-    }
-  }
+		.categories.align-right {
+			p {
+				text-align: right;
+				padding-right: 3rem;
+				transform: translateX(1%);
+			}
+		}
+	}
 
-  .about-me {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    font-size: 1rem;
-    margin: 2rem 1.5rem 4rem;
-    gap: 2rem;
+	.about-me {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+		font-size: 1rem;
+		margin: 2rem 1.5rem 4rem;
+		gap: 2rem;
 
-    //Image
-    #image-of-me {
-      position: relative;
-      width: 15rem;
-      height: 15rem;
-      border-radius: 50%;
-      background-color: $bc-magenta;
-      figcaption {
-        z-index: 1;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0;
-        pointer-events: none;
-      }
+		//Image
+		#image-of-me {
+			position: relative;
+			width: 15rem;
+			height: 15rem;
+			border-radius: 50%;
+			background-color: $bc-magenta;
+			figcaption {
+				z-index: 1;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				opacity: 0;
+				pointer-events: none;
+			}
 
-      img {
-        border-radius: 50%;
-        width: 100%;
-        z-index: 2;
+			img {
+				border-radius: 50%;
+				width: 100%;
+				z-index: 2;
 
-        &:hover {
-          opacity: 30%;
-        }
-      }
+				&:hover {
+					opacity: 30%;
+				}
+			}
 
-      /* Hover */
-      &:hover {
-        figcaption {
-          opacity: 100;
-          font-weight: 600;
-          color: #ffffff;
-        }
-      }
-    }
+			/* Hover */
+			&:hover {
+				figcaption {
+					opacity: 100;
+					font-weight: 600;
+					color: #ffffff;
+				}
+			}
+		}
 
-    //introduction
-    article {
-      p {
-        text-align: justify;
-        font-weight: 400;
-        color: $bc-gray strong;
-        strong {
-          color: $bc-magenta;
-        }
-      }
-    }
-  }
+		//introduction
+		article {
+			p {
+				text-align: justify;
+				font-weight: 400;
+				color: $bc-gray strong;
+				strong {
+					color: $bc-magenta;
+				}
+			}
+		}
+	}
 
-  .social-media-section {
-    background-color: $bc-cyan;
-    width: 100%;
-    padding: 1.5rem 2rem;
-    display: flex;
-    justify-content: space-between;
-  }
+	.social-media-section {
+		background-color: $bc-cyan;
+		width: 100%;
+		padding: 1.5rem 2rem;
+		display: flex;
+		justify-content: space-between;
+	}
 
-  //Information
-  .information {
-    margin: 2rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+	//Information
+	.information {
+		margin: 2rem 1.5rem;
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
 
-    div {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 0.625rem;
-      figure {
-        position: relative;
-        width: 20rem;
-        margin: auto;
+		div {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 0.625rem;
+			figure {
+				position: relative;
+				width: 20rem;
+				margin: auto;
+				background-color: $bc-gray;
 
-        img {
-          width: 100%;
-          z-index: 2;
+				img {
+					width: 100%;
+					z-index: 2;
 
-          &:hover {
-            filter: grayscale(1);
-          }
-        }
-      }
+					&:hover {
+						filter: grayscale(1);
+					}
+				}
+			}
 
-      article {
-        h1 {
-          font-family: "Roboto Condensed", sans-serif;
-          font-weight: 300;
-          font-size: 1.8rem;
-          color: $bc-cyan;
-        }
+			article {
+				h1 {
+					font-family: "Roboto Condensed", sans-serif;
+					font-weight: 300;
+					font-size: 1.8rem;
+					color: $bc-cyan;
+				}
 
-        p {
-          text-align: justify;
-          margin: 0.5rem 0 2rem;
-        }
+				p {
+					text-align: justify;
+					margin: 0.5rem 0 2rem;
+				}
 
-        a {
-          position: relative;
-          padding: 0.625rem 2rem;
-          max-width: 15rem;
-          width: 100%;
-          cursor: pointer;
-          background: transparent;
-          color: $bc-cyan;
-          text-decoration: none;
-          text-transform: uppercase;
+				a {
+					position: relative;
+					padding: 0.725rem 2rem 0.3125rem;
+					max-width: 15rem;
+					width: 100%;
+					cursor: pointer;
+					background: transparent;
+					color: $bc-cyan;
+					text-decoration: none;
+					text-transform: uppercase;
 
-          .rectangle {
-            width: 100%;
-            height: 2.813rem;
-            position: absolute;
-            left: 0;
-            top: 0;
+					.rectangle {
+						width: 100%;
+						height: 2.813rem;
+						position: absolute;
+						left: 0;
+						top: 0;
 
-            rect {
-              fill: none;
-              stroke: $bc-cyan;
-              stroke-width: 2;
-              stroke-dasharray: 422, 0;
-              transition: all 0.35s ease;
-            }
-          }
+						rect {
+							fill: none;
+							stroke: $bc-cyan;
+							stroke-width: 2;
+							stroke-dasharray: 422, 0;
+							transition: all 0.35s ease;
+						}
+					}
 
-          &:hover {
-            font-weight: 900;
-            letter-spacing: 1px;
-            color: $bc-magenta;
+					&:hover {
+						font-weight: 900;
+						letter-spacing: 1px;
+						color: $bc-magenta;
 
-            rect {
-              stroke: $bc-magenta;
-              stroke-width: 5;
-              stroke-dasharray: 0, 310;
-              stroke-dashoffset: 48;
-              transition: all 0.3s ease;
-            }
-          }
-        }
-      }
-    }
-  }
+						rect {
+							stroke: $bc-magenta;
+							stroke-width: 5;
+							stroke-dasharray: 0, 310;
+							stroke-dashoffset: 48;
+							transition: all 0.3s ease;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 /* Tablet*/
 @media (min-width: $tablet) {
-  .home {
-    padding-top: 0;
-    .about-me {
-      flex-direction: row;
-      justify-content: center;
+	.home {
+		padding-top: 0;
+		.about-me {
+			flex-direction: row;
+			justify-content: center;
 
-      #image-of-me {
-        position: relative;
-        width: 15rem;
-        height: 15rem;
-        border-radius: 0;
+			#image-of-me {
+				position: relative;
+				width: 15rem;
+				height: 15rem;
+				border-radius: 0;
 
-        img {
-          border-radius: 0;
-          width: 15rem;
-        }
-      }
+				img {
+					border-radius: 0;
+					width: 15rem;
+				}
+			}
 
-      article {
-        width: 60%;
-      }
-    }
+			article {
+				width: 60%;
+			}
+		}
 
-    .information {
-      gap: 5rem;
+		.information {
+			gap: 5rem;
 
-      div {
-        flex-direction: row;
-        gap: 1.25rem;
-        figure {
-          width: 25rem;
-        }
+			div {
+				flex-direction: row;
+				gap: 1.25rem;
+				figure {
+					width: 25rem;
+				}
 
-        article {
-          width: 100%;
-          text-align: justify;
-        }
+				article {
+					width: 100%;
+					text-align: justify;
+				}
 
-        &:nth-of-type(even) {
-          flex-direction: row-reverse;
-        }
-      }
-    }
-  }
+				&:nth-of-type(even) {
+					flex-direction: row-reverse;
+				}
+			}
+		}
+	}
 }
 
 /* Desktop */
 @media (min-width: $desktop) {
-  .home {
-    .about-me {
-      #image-of-me {
-        width: 20rem;
-        height: 20rem;
-        img {
-          width: 20rem;
-        }
-      }
-    }
+	.home {
+		.about-me {
+			#image-of-me {
+				width: 20rem;
+				height: 20rem;
+				img {
+					width: 20rem;
+				}
+			}
+		}
 
-    .social-media-section {
-      justify-content: space-around;
-    }
+		.social-media-section {
+			justify-content: space-around;
+		}
 
-    .information {
-      justify-content: center;
-      div {
-        figure {
-          margin: 0;
-          width: 20rem;
-        }
+		.information {
+			justify-content: center;
+			div {
+				figure {
+					margin: 0;
+					width: 20rem;
+				}
 
-        article {
-          width: 60%;
-        }
-      }
-    }
-  }
+				article {
+					width: 60%;
+				}
+			}
+		}
+	}
 }
+
 </style>

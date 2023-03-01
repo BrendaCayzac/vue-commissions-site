@@ -48,82 +48,82 @@ export default defineComponent({
 @import "src/styles/custom";
 
 .social-media-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .button {
-    border-radius: 50%;
-    background-color: #ffffff;
-    width: 5rem;
-    height: 5rem;
-    font-size: 3rem;
-    color: $bc-cyan;
-    text-align: center;
-    line-height: 5.2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.button {
+		border-radius: 50%;
+		background-color: #ffffff;
+		width: 5rem;
+		height: 5rem;
+		font-size: 3rem;
+		color: $bc-cyan;
+		text-align: center;
+		line-height: 5.2rem;
 
-	  &:focus{
-		  outline-color: $bc-magenta;
-	  }
-  }
-  .text {
-    display: none;
-  }
+		&:focus{
+			outline-color: $bc-magenta;
+		}
+	}
+	.text {
+		display: none;
+	}
 }
 
 // Screens > tablet
 @media (min-width: $tablet) {
-  .social-media-button {
-    transition: all 0.2s ease-in-out;
+	.social-media-button {
+		transition: all 0.2s ease-in-out;
 
-    .button {
-      width: 3rem;
-      height: 3rem;
-      font-size: 1.5rem;
-      line-height: 3rem;
-    }
-    .text {
-      display: initial;
-      font-size: 1rem;
-      color: #ffffff;
-      padding-left: 0.325rem;
-    }
+		.button {
+			width: 3rem;
+			height: 3rem;
+			font-size: 1.5rem;
+			line-height: 3rem;
+		}
+		.text {
+			display: initial;
+			font-size: 1rem;
+			color: #ffffff;
+			padding-left: 0.325rem;
+		}
 
-    //Hover
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
+		//Hover
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
 }
 
 /* Min Desktop */
 @media (min-width: $desktop-small) {
-  .social-media-button {
-    .button {
-      width: 4rem;
-      height: 4rem;
-      font-size: 2rem;
-      line-height: 4.1rem;
-    }
-    .text {
-      font-size: 1.25rem;
-      padding-left: 0.625rem;
-    }
-  }
+	.social-media-button {
+		.button {
+			width: 4rem;
+			height: 4rem;
+			font-size: 2rem;
+			line-height: 4.1rem;
+		}
+		.text {
+			font-size: 1.25rem;
+			padding-left: 0.625rem;
+		}
+	}
 }
 
 /* Desktop */
 @media (min-width: $desktop) {
-  .social-media-button {
-    .button {
-      width: 5rem;
-      height: 5rem;
-      font-size: 3rem;
-      line-height: 5.1rem;
-    }
-    .text {
-      font-size: 1.5rem;
-      padding-left: 0.625rem;
-    }
-  }
+	.social-media-button {
+		.button {
+			width: 5rem;
+			height: 5rem;
+			font-size: 3rem;
+			line-height: 5.1rem;
+		}
+		.text {
+			font-size: 1.5rem;
+			padding-left: 0.625rem;
+		}
+	}
 }
 </style>

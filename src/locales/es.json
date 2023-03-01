@@ -140,5 +140,8 @@
   "Please, type an email": "Por favor, escribe un email",
   "Please, type a valid email": "Por favor, escribe un email válido",
   "Please, type a message": "Por favor, escribe un mensaje",
-  "Message cannot be empty": "El mensaje no puede estar vacío"
+  "Message cannot be empty": "El mensaje no puede estar vacío",
+  "Graphic Design": "Graphic Design",
+	"Graphic design": "Graphic design",
+  "Line art": "Line art"
 }
