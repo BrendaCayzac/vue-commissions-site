@@ -13,15 +13,14 @@
       netlify-honeypot="bot-field"
       data-netlify-recaptcha="true"
       @submit.prevent="handleSubmit"
-      netlify
     >
+	      <input type="hidden" name="form-name" value="contact" />
       <div class="inputs">
         <p class="hidden">
           <label>
             Don’t fill this out if you’re human: <input name="bot-field" />
           </label>
         </p>
-	      <input type="hidden" name="form-name" value="contact" />
         <div
           class="input-container"
           :class="{ invalid: isEmailInvalid, filled: formData.email !== '' }"
