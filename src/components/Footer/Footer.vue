@@ -73,7 +73,7 @@ footer {
       list-style: none;
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-start;
+      justify-content: space-around;
       align-self: center;
       gap: 2rem;
       margin: 0;

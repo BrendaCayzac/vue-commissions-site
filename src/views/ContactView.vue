@@ -1,9 +1,12 @@
 <template>
-  <div class="commissions">
+  <div class="contact">
     <Header :plural="true" title="Contact" subtitle="get in touch!" />
-    <p>
+    <p class="information">
       You should receive a reply within 1 - 3 business days after you've sent
-      the message.
+      the message. Please, make sure to read the terms and conditions on the
+      <a href="/commissions">Commissions page</a>. Any message that violates
+      them will be
+      considered spam.
     </p>
     <form
       name="contact"
@@ -13,26 +16,31 @@
       data-netlify-recaptcha="true"
       @submit.prevent="handleSubmit"
     >
-      <p class="hidden">
-        <label>
-          Don’t fill this out if you’re human: <input name="bot-field" />
-        </label>
-      </p>
-      <div
-        class="input-container"
-        :class="{ invalid: isEmailInvalid, filled: formData.email !== '' }"
-      >
-        <input type="email" name="email" v-model="formData.email" />
-        <label for="email">Your email:</label>
-        <p>{{ emailError }}</p>
-      </div>
-      <div
-        class="input-container"
-        :class="{ invalid: isMessageInvalid, filled: formData.message !== '' }"
-      >
-        <textarea name="message" v-model="formData.message" />
-        <label for="message">Message:</label>
-        <p>{{ messageError }}</p>
+      <div class="inputs">
+        <p class="hidden">
+          <label>
+            Don’t fill this out if you’re human: <input name="bot-field" />
+          </label>
+        </p>
+        <div
+          class="input-container"
+          :class="{ invalid: isEmailInvalid, filled: formData.email !== '' }"
+        >
+          <input type="email" name="email" v-model="formData.email" />
+          <label for="email">Your email:</label>
+          <p>{{ emailError }}</p>
+        </div>
+        <div
+          class="input-container"
+          :class="{
+            invalid: isMessageInvalid,
+            filled: formData.message !== '',
+          }"
+        >
+          <textarea name="message" v-model="formData.message" />
+          <label for="message">Message:</label>
+          <p>{{ messageError }}</p>
+        </div>
       </div>
       <div data-netlify-recaptcha="true"></div>
       <CommonButton
@@ -123,6 +131,7 @@ export default defineComponent({
         .then(() => console.log("Form successfully submitted"))
         .catch((error) => alert(error));
     };
+
     return {
       emailError,
       formData,
@@ -138,69 +147,84 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import "src/styles/custom";
 
-.commissions {
+.contact {
   padding: 3.75rem 1.5rem 3rem;
+	min-height: 92vh;
 
   .hidden {
     display: none;
   }
+
+  .information {
+    text-align: center;
+    margin-bottom: 2rem;
+	  a{
+		  color: $bc-magenta;
+	  }
+  }
+
   form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 1rem;
     width: 100%;
 
-    .input-container {
+    .inputs {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 1rem;
       width: 100%;
-      position: relative;
-      label {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        top: 0.75rem;
-        left: 1rem;
-        pointer-events: none;
-        color: #c0c0c0;
-        transition: all 0.15s ease-out;
-      }
-
-      input,
-      textarea {
-        height: 3rem;
-        min-width: 17.5rem;
+      .input-container {
         width: 100%;
-        border: 1px solid #c0c0c0;
-        border-radius: 4px;
-        box-sizing: border-box;
-        padding: 16px;
+        position: relative;
 
-        &:focus {
-          outline: none;
-          border: 2px solid $bc-cyan;
+        label {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          top: 0.75rem;
+          left: 1rem;
+          pointer-events: none;
+          color: #c0c0c0;
+          transition: all 0.15s ease-out;
         }
 
-        &:focus + label {
-          font-size: 0.75rem;
-          transform: translate(0, -115%);
-          background-color: white;
-          padding-left: 0.25rem;
-          padding-right: 0.25rem;
-          color: $bc-cyan;
+        input,
+        textarea {
+          height: 3rem;
+          min-width: 17.5rem;
+          width: 100%;
+          border: 1px solid #c0c0c0;
+          border-radius: 4px;
+          box-sizing: border-box;
+          padding: 16px;
+
+          &:focus {
+            outline: none;
+            border: 2px solid $bc-cyan;
+          }
+
+          &:focus + label {
+            font-size: 0.75rem;
+            transform: translate(0, -115%);
+            background-color: white;
+            padding-left: 0.25rem;
+            padding-right: 0.25rem;
+            color: $bc-cyan;
+          }
         }
-      }
 
-      textarea {
-        height: 9rem;
-      }
+        textarea {
+          height: 9rem;
+          resize: none;
+        }
 
-      p {
-        font-size: 0.8rem;
-        color: $bc-gray;
-        opacity: 0.85;
-        text-align: left;
-        padding: 0.3125rem;
+        p {
+          font-size: 0.8rem;
+          color: $bc-gray;
+          opacity: 0.85;
+          text-align: left;
+          padding: 0.3125rem;
+        }
       }
     }
 
@@ -228,11 +252,37 @@ export default defineComponent({
   }
 }
 
-/* Desktop */
+/* Tablet */
 @media (min-width: $tablet) {
-  .commissions {
+  .contact {
+	  min-height: 85vh;
+    .information {
+      text-align: left;
+      margin: 0 3rem 2rem;
+    }
+
     form {
-      width: 17.5rem;
+      width: 100%;
+      padding: 0 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      .inputs {
+        flex-direction: row;
+        justify-content: space-between;
+
+        .input-container {
+          width: 32%;
+
+          &:last-child {
+            width: 66%;
+          }
+
+          textarea {
+            height: 6rem;
+          }
+        }
+      }
     }
   }
 }

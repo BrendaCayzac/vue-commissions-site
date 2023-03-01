@@ -29,5 +29,6 @@ export default defineComponent({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #202020;
+	min-height: 100vh;
 }
 </style>
