@@ -28,24 +28,25 @@
       </div>
       <div
         class="input-container"
-        :class="{ invalid: isEmailInvalid, filled: formData.message !== '' }"
+        :class="{ invalid: isMessageInvalid, filled: formData.message !== '' }"
       >
         <textarea name="message" v-model="formData.message" />
         <label for="message">Message:</label>
         <p>{{ messageError }}</p>
       </div>
       <div data-netlify-recaptcha="true"></div>
-      <button
-        :disabled="
+      <CommonButton
+        :disable-conditions="
           formData.email === '' ||
           formData.message === '' ||
           isEmailInvalid ||
           isMessageInvalid
         "
         type="submit"
+        @click="handleSubmit"
       >
         Send
-      </button>
+      </CommonButton>
     </form>
   </div>
 </template>
@@ -54,10 +55,11 @@
 import { defineComponent, ref, watch } from "vue";
 
 import Header from "@/components/Header/Header.vue";
+import CommonButton from "@/components/Buttons/CommonButton.vue";
 
 export default defineComponent({
   name: "ContactView",
-  components: { Header },
+  components: { Header, CommonButton },
 
   setup() {
     const formData = ref({
@@ -222,6 +224,15 @@ export default defineComponent({
         padding-left: 0.25rem;
         padding-right: 0.25rem;
       }
+    }
+  }
+}
+
+/* Desktop */
+@media (min-width: $tablet) {
+  .commissions {
+    form {
+      width: 17.5rem;
     }
   }
 }
