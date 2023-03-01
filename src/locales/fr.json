@@ -129,5 +129,16 @@
 	"Nike Tangible poster": "affiche tangible Nike",
 	"nike-tangible-description": "Une affiche tangible pour un projet de Nike réalisé avec des éléments physiques et des retouches numériques",
 	"Happy Ever after CD": "Happy Ever After CD",
-	"cd-description": "Une maquette d'un CD non officiel de la chanteuse et compositrice Marina Diamandis"
+	"cd-description": "Une maquette d'un CD non officiel de la chanteuse et compositrice Marina Diamandis",
+	"Let's get in touch!": "Let's get in touch!",
+	"contact-1": "Vous devriez recevoir une réponse dans un délai de 1 à 3 jours ouvrables après avoir envoyé le message. S'il vous plaît, assurez-vous de lire les termes et conditions sur la",
+	"Commissions page": "page Commissions",
+	"contact-2": "Tout message qui les enfreint sera considéré comme un spam",
+	"Your email": "Votre e-mail",
+	"Message": "Message",
+	"Send": "Envoyer",
+	"Please, type an email": "Veuillez écrire un e-mail",
+	"Please, type a valid email": "Veuillez écrire un e-mail valide",
+	"Please, type a message": "Veuillez écrire un message",
+	"Message cannot be empty": "Le message ne peut pas être vide"
 }

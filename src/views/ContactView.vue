@@ -1,12 +1,10 @@
 <template>
   <div class="contact">
-    <Header :plural="true" title="Contact" subtitle="get in touch!" />
+    <Header :plural="true" title="contact" subtitle="Let's get in touch!" />
     <p class="information">
-      You should receive a reply within 1 - 3 business days after you've sent
-      the message. Please, make sure to read the terms and conditions on the
-      <a href="/commissions">Commissions page</a>. Any message that violates
-      them will be
-      considered spam.
+      {{$t('contact-1')}}
+      <a href="/commissions">{{$t('Commissions page')}}</a>.
+      {{$t('contact-2')}}.
     </p>
     <form
       name="contact"
@@ -27,8 +25,8 @@
           :class="{ invalid: isEmailInvalid, filled: formData.email !== '' }"
         >
           <input type="email" name="email" v-model="formData.email" />
-          <label for="email">Your email:</label>
-          <p>{{ emailError }}</p>
+          <label for="email">{{$t('Your email')}}:</label>
+          <p>{{$t(emailError)}}</p>
         </div>
         <div
           class="input-container"
@@ -38,8 +36,8 @@
           }"
         >
           <textarea name="message" v-model="formData.message" />
-          <label for="message">Message:</label>
-          <p>{{ messageError }}</p>
+          <label for="message">{{$t('Message')}}:</label>
+          <p>{{$t(messageError)}}</p>
         </div>
       </div>
       <div data-netlify-recaptcha="true"></div>
@@ -53,7 +51,7 @@
         type="submit"
         @click="handleSubmit"
       >
-        Send
+	      {{$t('Send')}}
       </CommonButton>
     </form>
   </div>
@@ -88,7 +86,7 @@ export default defineComponent({
 
       if (!email.toLowerCase().match(regex) || email === "") {
         isEmailInvalid.value = true;
-        return "Please, type a valid email.";
+        return "Please, type a valid email";
       } else {
         isEmailInvalid.value = false;
         return "Please, type an email";
@@ -149,7 +147,7 @@ export default defineComponent({
 
 .contact {
   padding: 3.75rem 1.5rem 3rem;
-	min-height: 92vh;
+  min-height: 92vh;
 
   .hidden {
     display: none;
@@ -158,9 +156,9 @@ export default defineComponent({
   .information {
     text-align: center;
     margin-bottom: 2rem;
-	  a{
-		  color: $bc-magenta;
-	  }
+    a {
+      color: $bc-magenta;
+    }
   }
 
   form {
@@ -191,7 +189,6 @@ export default defineComponent({
         input,
         textarea {
           height: 3rem;
-          min-width: 17.5rem;
           width: 100%;
           border: 1px solid #c0c0c0;
           border-radius: 4px;
@@ -225,37 +222,39 @@ export default defineComponent({
           text-align: left;
           padding: 0.3125rem;
         }
-      }
-    }
 
-    .invalid {
-      input,
-      textarea {
-        border: 1px solid #d10000;
       }
 
-      p,
-      label {
-        color: #d10000;
-      }
+	    .invalid {
+		    input,
+		    textarea {
+			    border: 1px solid #d10000;
+		    }
+
+		    p,
+		    label {
+			    color: #d10000;
+		    }
+	    }
+
+	    .filled {
+		    label {
+			    font-size: 0.75rem;
+			    transform: translate(0, -115%);
+			    background-color: white;
+			    padding-left: 0.25rem;
+			    padding-right: 0.25rem;
+		    }
+	    }
     }
 
-    .filled {
-      label {
-        font-size: 0.75rem;
-        transform: translate(0, -115%);
-        background-color: white;
-        padding-left: 0.25rem;
-        padding-right: 0.25rem;
-      }
-    }
   }
 }
 
 /* Tablet */
 @media (min-width: $tablet) {
   .contact {
-	  min-height: 85vh;
+    min-height: 85vh;
     .information {
       text-align: left;
       margin: 0 3rem 2rem;
