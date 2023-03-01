@@ -18,7 +18,7 @@
 
     <!--Links-->
     <ul v-if="showMenu || windowWidth > 768" class="menu">
-      <li v-for="(route, index) in routes" :key="index">
+      <li v-for="(route, index) in routes.slice(0, 4)" :key="index">
         <router-link :to="route.path">{{
           route.name.toString() === "commissions"
             ? $tc("commission", 2)
@@ -299,9 +299,9 @@ nav {
           padding: 0.625rem 1rem;
         }
 
-	      &:last-child{
-		      padding: 0 1.5rem 0 0;
-	      }
+        &:last-child {
+          padding: 0 1.5rem 0 0;
+        }
       }
 
       .language-selection {

@@ -61,6 +61,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, watch } from "vue";
+import {useRouter} from "vue-router";
 
 import Header from "@/components/Header/Header.vue";
 import CommonButton from "@/components/Buttons/CommonButton.vue";
@@ -70,6 +71,8 @@ export default defineComponent({
   components: { Header, CommonButton },
 
   setup() {
+		const router = useRouter();
+
     const formData = ref({
       email: "",
       message: "",
@@ -127,8 +130,14 @@ export default defineComponent({
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contact", ...formData.value }),
       })
-        .then(() => console.log("Form successfully submitted"))
-        .catch((error) => alert(error));
+        .then(() => {
+	        console.log("Form successfully submitted");
+	        router.push('/thanks')
+        })
+        .catch((error) => {
+	        alert(error);
+	        router.push('/404')
+        });
     };
 
     return {

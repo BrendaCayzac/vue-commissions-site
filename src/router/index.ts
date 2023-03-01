@@ -26,6 +26,18 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("../views/ContactView.vue"),
     meta: { title: "Contact" },
   },
+  {
+    path: "/thanks",
+    name: "success",
+    component: () => import("../views/SubmissionSuccess.vue"),
+    meta: { title: "success" },
+  },
+  {
+    path: "/404",
+    name: "fail",
+    component: () => import("../views/SubmissionFail.vue"),
+    meta: { title: "fail" },
+  },
 ];
 
 const router = createRouter({

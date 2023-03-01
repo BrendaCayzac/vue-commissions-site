@@ -142,6 +142,10 @@
   "Please, type a message": "Por favor, escribe un mensaje",
   "Message cannot be empty": "El mensaje no puede estar vacío",
   "Graphic Design": "Graphic Design",
-	"Graphic design": "Graphic design",
-  "Line art": "Line art"
+  "Graphic design": "Graphic design",
+  "Line art": "Line art",
+  "Thank you for your submission!": "Gracias por tu mensaje!",
+  "Oh! Something went wrong": "Oh! Algo salió mal",
+  "You can always contact me via": "Siempre me puedes contactar via",
+  "or": "o"
 }
