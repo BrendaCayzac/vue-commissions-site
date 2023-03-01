@@ -1,6 +1,14 @@
 <template>
   <div class="success">
     <h1>Thank you for your submission!</h1>
+	  <p>
+		  {{ $t("You can always contact me via") }}
+		  <a href="https://www.linkedin.com/in/brenda-cayzac-138297103/"
+		  >LinkedIn</a>, <a href="https://twitter.com/BrendaCayzac">Twitter</a>,
+		  {{ $t("or") }}
+		  <a href="https://www.behance.net/brendacayzeb7a?isa0=1">Behance</a>
+	  </p>
+
     <router-link to="/">
       <CommonButton>
         {{ $t("Home") }}
@@ -25,7 +33,7 @@ export default defineComponent({
 
 .success {
   height: 100vh;
-  padding: 2rem 1.5rem;
+  padding: 5.5rem 1.5rem 2rem;
 
   h1 {
     display: block;
@@ -37,5 +45,14 @@ export default defineComponent({
     color: $bc-gray;
     padding-bottom: 1.5rem;
   }
+
+	p{
+		margin-bottom: 2rem;
+		a{
+			text-decoration: none;
+			color: $bc-magenta;
+			font-weight: bold;
+		}
+	}
 }
 </style>
