@@ -32,8 +32,8 @@ export default defineComponent({
 header {
   position: relative;
   width: 100%;
-  padding: 2em;
-  margin: 1.5em;
+  padding: 2em 0;
+  margin: 1.5em 0;
   text-align: center;
 
   h1 {
@@ -73,6 +73,8 @@ header {
 
 @media (min-width: $tablet) {
   header {
+	  padding: 2em;
+	  margin: 1.5em;
     text-align: start;
     h1:before {
       left: 0.75em;

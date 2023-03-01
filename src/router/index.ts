@@ -23,7 +23,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/contact",
     name: "contact",
-    component: () => import("../views/AboutView.vue"),
+    component: () => import("../views/ContactView.vue"),
     meta: { title: "Contact" },
   },
 ];
