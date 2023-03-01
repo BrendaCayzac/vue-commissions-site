@@ -2,19 +2,19 @@
   <div class="contact">
     <Header :plural="true" title="contact" subtitle="Let's get in touch!" />
     <p class="information">
-      {{$t('contact-1')}}
-      <a href="/commissions">{{$t('Commissions page')}}</a>.
-      {{$t('contact-2')}}.
+      {{ $t("contact-1") }}
+      <a href="/commissions">{{ $t("Commissions page") }}</a
+      >. {{ $t("contact-2") }}.
     </p>
+
     <form
       name="contact"
-      method="POST"
+      method="post"
       data-netlify="true"
-      netlify-honeypot="bot-field"
+      data-netlify-honeypot="bot-field"
       data-netlify-recaptcha="true"
       @submit.prevent="handleSubmit"
     >
-	      <input type="hidden" name="form-name" value="contact" />
       <div class="inputs">
         <p class="hidden">
           <label>
@@ -26,8 +26,8 @@
           :class="{ invalid: isEmailInvalid, filled: formData.email !== '' }"
         >
           <input type="email" name="email" v-model="formData.email" />
-          <label for="email">{{$t('Your email')}}:</label>
-          <p>{{$t(emailError)}}</p>
+          <label for="email">{{ $t("Your email") }}:</label>
+          <p>{{ $t(emailError) }}</p>
         </div>
         <div
           class="input-container"
@@ -37,8 +37,8 @@
           }"
         >
           <textarea name="message" v-model="formData.message" />
-          <label for="message">{{$t('Message')}}:</label>
-          <p>{{$t(messageError)}}</p>
+          <label for="message">{{ $t("Message") }}:</label>
+          <p>{{ $t(messageError) }}</p>
         </div>
       </div>
       <div data-netlify-recaptcha="true"></div>
@@ -52,7 +52,7 @@
         type="submit"
         @click="handleSubmit"
       >
-	      {{$t('Send')}}
+        {{ $t("Send") }}
       </CommonButton>
     </form>
   </div>
@@ -121,7 +121,6 @@ export default defineComponent({
     };
 
     const handleSubmit = () => {
-
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -223,32 +222,30 @@ export default defineComponent({
           text-align: left;
           padding: 0.3125rem;
         }
-
       }
 
-	    .invalid {
-		    input,
-		    textarea {
-			    border: 1px solid #d10000;
-		    }
+      .invalid {
+        input,
+        textarea {
+          border: 1px solid #d10000;
+        }
 
-		    p,
-		    label {
-			    color: #d10000;
-		    }
-	    }
+        p,
+        label {
+          color: #d10000;
+        }
+      }
 
-	    .filled {
-		    label {
-			    font-size: 0.75rem;
-			    transform: translate(0, -115%);
-			    background-color: white;
-			    padding-left: 0.25rem;
-			    padding-right: 0.25rem;
-		    }
-	    }
+      .filled {
+        label {
+          font-size: 0.75rem;
+          transform: translate(0, -115%);
+          background-color: white;
+          padding-left: 0.25rem;
+          padding-right: 0.25rem;
+        }
+      }
     }
-
   }
 }
 
