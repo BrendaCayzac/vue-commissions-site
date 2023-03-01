@@ -13,6 +13,7 @@
       netlify-honeypot="bot-field"
       data-netlify-recaptcha="true"
       @submit.prevent="handleSubmit"
+      netlify
     >
       <div class="inputs">
         <p class="hidden">
@@ -20,6 +21,7 @@
             Don’t fill this out if you’re human: <input name="bot-field" />
           </label>
         </p>
+	      <input type="hidden" name="form-name" value="contact" />
         <div
           class="input-container"
           :class="{ invalid: isEmailInvalid, filled: formData.email !== '' }"
@@ -120,7 +122,7 @@ export default defineComponent({
     };
 
     const handleSubmit = () => {
-      console.log(encode({ "form-name": "contact", ...formData.value }));
+
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
