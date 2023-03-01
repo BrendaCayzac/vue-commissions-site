@@ -15,6 +15,7 @@
       data-netlify-recaptcha="true"
       @submit.prevent="handleSubmit"
     >
+	    <input type="hidden" name="form-name" value="contact">
       <div class="inputs">
         <p class="hidden">
           <label>
