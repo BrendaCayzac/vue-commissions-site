@@ -62,7 +62,7 @@ export default defineComponent({
                                        alt: "Updated brand",
                                        date: 2023,
                                        category: "web",
-                                       link: "https://www.behance.net/gallery/176312679/Character-portraits",
+                                       link: "https://www.behance.net/gallery/176214657/Re-branding",
                                        description:
                                          "updated-brand"
                                      },
