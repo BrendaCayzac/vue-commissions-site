@@ -89,6 +89,7 @@ $portfolio-item-info-offset: 7px;
   width: 100%;
   height: 15rem;
   overflow: hidden;
+  background-color: $bc-gray;
 
   img {
     width: 15rem;
@@ -106,9 +107,9 @@ $portfolio-item-info-offset: 7px;
       position: relative;
       margin: 0 0 0.625rem 0;
       padding: 1rem 0;
-      font-size: 1.25rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       color: #ffffff;
 
       &:after {
@@ -126,6 +127,7 @@ $portfolio-item-info-offset: 7px;
       position: relative;
       display: block;
       color: #ffffff;
+      display: none;
     }
 
     .link {
