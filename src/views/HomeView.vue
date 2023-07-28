@@ -12,7 +12,7 @@
     <section class="about-me">
       <!--Picture-->
       <figure id="image-of-me">
-        <img src="../assets/photo.jpg" :alt="$t('my-photo-alt')" />
+        <img src="../assets/me.jpg" :alt="$t('my-photo-alt')" />
         <figcaption>{{ $t("That's me") }}</figcaption>
       </figure>
       <article>
@@ -99,8 +99,8 @@ export default defineComponent({
       {
         id: "Behance",
         faIcon: "fa-brands fa-behance",
-        url: "https://www.behance.net/brendacayzeb7a?isa0=1",
-        text: "/brendacay",
+        url: "https://www.behance.net/brendacayzac",
+        text: "/brendacayzac",
       },
       {
         id: "GitHub",

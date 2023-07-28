@@ -50,9 +50,39 @@ export default defineComponent({
     ];
 
     const portfolioArray = [
+      {
+        name: "Updated brand",
+        img: "behance-cover",
+        alt: "Updated brand",
+        date: 2023,
+        category: "web",
+        link: "https://www.behance.net/gallery/176312679/Character-portraits",
+        description:
+          "updated-brand",
+      },
+      {
+        name: "Dungeons and Dragons portraits",
+        img: "Ebele",
+        alt: "Dungeons and Dragons portraits",
+        date: 2023,
+        category: "web",
+        link: "https://www.behance.net/gallery/176312679/Character-portraits",
+        description:
+          "dungeons-and-dragons-portraits",
+      },
+      {
+        name: "Front-end Playground",
+        img: "testing",
+        alt: "Front-end testing",
+        date: 2023,
+        category: "web",
+        link: "https://front-end-playground.netlify.app",
+        description:
+          "front-end-playground-description",
+      },
 	    {
 		    name: "Vue site",
-		    img: "construction_work",
+		    img: "me",
 		    alt: "This site",
 		    date: 2023,
 		    category: "web",
