@@ -305,6 +305,7 @@ nav {
       }
 
       .language-selection {
+        margin-left: 1rem;
         span {
           padding: 0.9rem 0.625rem 0.625rem;
         }
