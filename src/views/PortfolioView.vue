@@ -58,6 +58,24 @@ export default defineComponent({
 
     const portfolioArray = [
       {
+        name: "Eclat du Moselle",
+        img: "eclat-du-moselle-cover",
+        alt: "Eclat du Moselle brand design",
+        date: 2024,
+        category: "brands",
+        link: "https://www.behance.net/gallery/211156427/Eclat-de-Moselle",
+        description: "eclat-du-moselle-description",
+      },
+      {
+        name: "Rendraw",
+        img: "rendraw-cover",
+        alt: "Rendraw brand design",
+        date: 2024,
+        category: "brands",
+        link: "https://www.behance.net/gallery/211156153/Rendraw",
+        description: "rendraw-description",
+      },
+      {
         name: "Pathfinder react",
         img: "pathfinder",
         alt: "Pathfinder react site",
