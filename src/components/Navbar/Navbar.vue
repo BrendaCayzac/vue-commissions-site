@@ -2,7 +2,12 @@
   <nav>
     <!--Title-->
     <h1 v-if="windowWidth > 768">BRENDA CAYZAC</h1>
-    <h1 v-else>BC</h1>
+    <img
+      v-else
+      height="40"
+      :src="getImgUrl('white_thumbnail', 'png')"
+      alt="Brand"
+    />
 
     <!--Menu Button-->
     <input
@@ -52,6 +57,7 @@ import { defineComponent, ref } from "vue";
 import { useRouter } from "vue-router";
 
 import i18n from "@/locales";
+import { getImgUrl } from "@/helpers/getImage";
 
 export default defineComponent({
   name: "SiteNavbar",
@@ -92,6 +98,7 @@ export default defineComponent({
     return {
       changeSelectedLanguage,
       fontAwesomeStyling,
+      getImgUrl,
       languages,
       routes,
       selectedLanguage,
@@ -116,13 +123,19 @@ nav {
   box-sizing: border-box;
   text-align: left;
 
+  img {
+    display: inline;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+  }
+
   h1 {
     display: initial;
     line-height: 3.125rem;
     font-weight: 700;
     color: #ffffff;
     font-family: "Roboto Condensed", sans-serif;
-    padding-left: 1.5625rem;
+    padding-left: 1rem;
   }
 
   /* menu icon */
@@ -194,6 +207,7 @@ nav {
     max-height: 0;
     transition: max-height 0.2s ease-out;
     padding-bottom: 2rem;
+    padding-left: 0.5rem;
 
     a {
       display: block;
